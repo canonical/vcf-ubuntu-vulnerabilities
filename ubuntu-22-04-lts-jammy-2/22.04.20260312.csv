@@ -29,4 +29,3 @@ CVE-2026-23268,high,,20260312,jammy,linux-modules-extra-6.8.0-106-generic,,https
 CVE-2026-23410,high,,20260312,jammy,linux-modules-extra-6.8.0-106-generic,,https://ubuntu.com/security/CVE-2026-23410,6.8.0-106.106~22.04.1,6.8.0-107.107~22.04.1,,,pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy
 CVE-2026-23411,high,,20260312,jammy,linux-modules-extra-6.8.0-106-generic,,https://ubuntu.com/security/CVE-2026-23411,6.8.0-106.106~22.04.1,6.8.0-107.107~22.04.1,,,pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy
 CVE-2026-25749,unknown,,20260312,jammy,xxd,,https://ubuntu.com/security/CVE-2026-25749,2:8.2.3995-1ubuntu2.24,2:8.2.3995-1ubuntu2.26,,,pkg:deb/ubuntu/xxd@2:8.2.3995-1ubuntu2.24?distro=jammy
-CVE-2026-26269,unknown,,20260312,jammy,xxd,,https://ubuntu.com/security/CVE-2026-26269,2:8.2.3995-1ubuntu2.24,2:8.2.3995-1ubuntu2.26,,,pkg:deb/ubuntu/xxd@2:8.2.3995-1ubuntu2.24?distro=jammy
