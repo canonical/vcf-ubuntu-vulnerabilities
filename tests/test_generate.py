@@ -1,6 +1,9 @@
 """Tests for the static HTML report generator."""
 
+import json
 import re
+
+import git
 
 from scripts.generate import (
     VCF_BASE_URL,
@@ -113,23 +116,19 @@ class TestParseCsv:
 
 
 class TestCsvCommitDate:
-    _UTC_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$")
-
-    def test_returns_utc_timestamp_when_repo_is_none(self, tmp_path):
+    def test_returns_today_when_repo_is_none(self, tmp_path):
         result = csv_commit_date(None, tmp_path / "any.csv")
-        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+        assert re.match(r'^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$', result)
 
-    def test_returns_utc_timestamp_when_file_not_in_git(self, tmp_path):
-        """Files in a real git repo but not yet committed fall back to current UTC time."""
-        import git
+    def test_returns_today_when_file_not_in_git(self, tmp_path):
+        """Files in a real git repo but not yet committed fall back to now."""
         repo = git.Repo.init(tmp_path)
         csv_path = tmp_path / "untracked.csv"
         csv_path.write_text("data")
         result = csv_commit_date(repo, csv_path)
-        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+        assert re.match(r'^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$', result)
 
-    def test_returns_commit_utc_timestamp_for_committed_file(self, tmp_path):
-        import git
+    def test_returns_commit_date_for_committed_file(self, tmp_path):
         repo = git.Repo.init(tmp_path)
         repo.config_writer().set_value("user", "name", "Test").release()
         repo.config_writer().set_value("user", "email", "t@t.com").release()
@@ -138,7 +137,8 @@ class TestCsvCommitDate:
         repo.index.add(["report.csv"])
         repo.index.commit("add report")
         result = csv_commit_date(repo, csv_path)
-        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+        # Should be a datetime string like YYYY-MM-DD HH:MM UTC
+        assert re.match(r'^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$', result)
 
 
 # Shared minimal distro fixture for render_html tests.
@@ -161,15 +161,19 @@ _PENDING_ROW = {
 
 
 def _make_distro(rows=None, extra_serial=False):
-    import json
-    serials = [{"name": "22.04.20260312", "rows": rows or [_SAMPLE_ROW],
-                 "generated_date": "2026-03-12 09:00 UTC"}]
+    serials = [
+        {"name": "22.04.20260312", "rows": rows or [_SAMPLE_ROW], "generated_date": "2026-03-12"}
+    ]
     if extra_serial:
-        serials.append({"name": "22.04.20260101", "rows": rows or [_SAMPLE_ROW],
-                        "generated_date": "2026-01-01 12:00 UTC"})
+        serials.append(
+            {
+                "name": "22.04.20260101",
+                "rows": rows or [_SAMPLE_ROW],
+                "generated_date": "2026-01-01",
+            }
+        )
     return {
         "label": "Ubuntu 22.04 LTS (Jammy)",
-        "dirname": "ubuntu-22-04-lts-jammy-2",
         "solution_url": f"{VCF_BASE_URL}/ubuntu-22-04-lts-jammy-2?slug=true",
         "serials": serials,
         "serials_json": json.dumps(
@@ -217,19 +221,3 @@ class TestRenderHtml:
         html = render_html([_make_distro()])
         assert 'serial-data-1' in html
         assert '22.04.20260312' in html
-
-    def test_html_contains_data_solution_id(self):
-        html = render_html([_make_distro()])
-        assert 'data-solution-id="ubuntu-22-04-lts-jammy-2"' in html
-
-    def test_html_contains_update_hash_function(self):
-        html = render_html([_make_distro()])
-        assert 'updateHash' in html
-
-    def test_html_contains_apply_hash_function(self):
-        html = render_html([_make_distro()])
-        assert 'applyHash' in html
-
-    def test_html_contains_hashchange_listener(self):
-        html = render_html([_make_distro()])
-        assert 'hashchange' in html

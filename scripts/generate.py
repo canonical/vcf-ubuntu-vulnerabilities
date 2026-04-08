@@ -33,8 +33,8 @@ _TEMPLATE = """\
   <title>Ubuntu CVE Vulnerability Dashboard</title>
   <link rel="stylesheet" href="vendor/vanilla-framework.min.css" />
   <style>
-    .pending-row { background-color: #fff3cd; }
-    .purl-cell   { font-family: monospace; font-size: 0.8em; word-break: break-all; }
+    .p-card.is-pending { background-color: #fff3cd; }
+    .purl-cell { font-family: monospace; font-size: 0.8em; word-break: break-all; }
     select.is-dense { width: auto; }
   </style>
 </head>
@@ -96,58 +96,52 @@ _TEMPLATE = """\
         </div>
         <script type="application/json"
                 id="serial-data-{{ loop.index }}">{{ distro.serials_json | safe }}</script>
-        <table
-          class="p-table--mobile-card"
-          id="table-{{ loop.index }}"
-          aria-label="{{ distro.label | e }} CVE vulnerabilities"
-        >
-          <thead>
-            <tr>
-              <th aria-sort="none"><button class="p-table__sort-button">CVE</button></th>
-              <th aria-sort="descending"><button class="p-table__sort-button">Severity</button></th>
-              <th aria-sort="none"><button class="p-table__sort-button">Package</button></th>
-              <th aria-sort="none"><button class="p-table__sort-button">Fix Version</button></th>
-              <th>PURL</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in distro.serials[0].rows %}
-            <tr{% if row.fixed_version == 'pending' %} class="pending-row"{% endif %}>
-              <td data-heading="CVE">
-                <a href="{{ row.url | e }}" target="_blank" rel="noopener noreferrer">
-                  {{ row.cve_id | e }}
-                </a>
-              </td>
-              <td data-heading="Severity">
-                {%- set sv = row.severity | lower %}
-                {%- if sv in ('critical', 'high') %}
-                  {%- set chip = 'p-chip--negative' %}
-                {%- elif sv == 'medium' %}
-                  {%- set chip = 'p-chip--caution' %}
-                {%- elif sv == 'low' %}
-                  {%- set chip = 'p-chip--positive' %}
-                {%- else %}
-                  {%- set chip = 'p-chip' %}
-                {%- endif %}
-                <span class="{{ chip }} is-readonly is-inline is-dense">
-                  <span class="p-chip__value">{{ row.severity | e }}</span>
+        <div class="row" id="cards-{{ loop.index }}">
+          {% for row in distro.serials[0].rows %}
+          {%- set sv = row.severity | lower %}
+          {%- if sv == 'critical' or sv == 'high' %}
+            {%- set chip = 'p-chip--negative' %}
+          {%- elif sv == 'medium' %}
+            {%- set chip = 'p-chip--caution' %}
+          {%- elif sv == 'low' %}
+            {%- set chip = 'p-chip--positive' %}
+          {%- else %}
+            {%- set chip = 'p-chip' %}
+          {%- endif %}
+          <div class="col-3 col-medium-3 col-small-4">
+            <div class="p-card{% if row.fixed_version == 'pending' %} is-pending{% endif %}">
+              <div class="u-clearfix">
+                <h4 class="u-no-margin--bottom u-float--left">
+                  <a href="{{ row.url | e }}" target="_blank"
+                     rel="noopener noreferrer">{{ row.cve_id | e }}</a>
+                </h4>
+                <span class="u-float--right">
+                  <span class="{{ chip }} is-readonly is-inline is-dense">
+                    <span class="p-chip__value">{{ row.severity | e }}</span>
+                  </span>
                 </span>
-              </td>
-              <td data-heading="Package">{{ row.package | e }}</td>
-              <td data-heading="Fix Version">
-                {% if row.fixed_version == 'pending' %}
-                <span class="p-chip--caution is-readonly is-inline is-dense">
-                  <span class="p-chip__value">pending</span>
-                </span>
-                {% else %}
-                {{ row.fixed_version | e }}
-                {% endif %}
-              </td>
-              <td data-heading="PURL" class="purl-cell">{{ row.purl | e }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+              </div>
+              <hr class="u-sv1" />
+              <dl class="u-no-margin--bottom">
+                <dt>Package</dt>
+                <dd>{{ row.package | e }}</dd>
+                <dt>Fix Version</dt>
+                <dd>
+                  {%- if row.fixed_version == 'pending' %}
+                  <span class="p-chip--caution is-readonly is-inline is-dense">
+                    <span class="p-chip__value">pending</span>
+                  </span>
+                  {%- else %}{{ row.fixed_version | e }}{%- endif %}
+                </dd>
+              </dl>
+              <details>
+                <summary class="u-text--muted">PURL</summary>
+                <p class="purl-cell">{{ row.purl | e }}</p>
+              </details>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       {% endfor %}
     </div>
@@ -171,24 +165,31 @@ _TEMPLATE = """\
     return 'p-chip';
   }
 
-  function buildRow(row) {
-    var cls = row.fixed_version === 'pending' ? ' class="pending-row"' : '';
-    var fixCell = row.fixed_version === 'pending'
+  function buildCard(row) {
+    var chipClass = severityChipClass(row.severity);
+    var fixHtml = row.fixed_version === 'pending'
       ? '<span class="p-chip--caution is-readonly is-inline is-dense">'
         + '<span class="p-chip__value">pending</span></span>'
       : esc(row.fixed_version);
-    var chipClass = severityChipClass(row.severity);
-    return '<tr' + cls + '>'
-      + '<td data-heading="CVE">'
+    var pendingClass = row.fixed_version === 'pending' ? ' is-pending' : '';
+    return '<div class="col-3 col-medium-3 col-small-4">'
+      + '<div class="p-card' + pendingClass + '">'
+      + '<div class="u-clearfix">'
+      + '<h4 class="u-no-margin--bottom u-float--left">'
       + '<a href="' + esc(row.url) + '" target="_blank" rel="noopener noreferrer">'
-      + esc(row.cve_id) + '</a></td>'
-      + '<td data-heading="Severity">'
+      + esc(row.cve_id) + '</a></h4>'
+      + '<span class="u-float--right">'
       + '<span class="' + chipClass + ' is-readonly is-inline is-dense">'
-      + '<span class="p-chip__value">' + esc(row.severity) + '</span></span></td>'
-      + '<td data-heading="Package">' + esc(row.package) + '</td>'
-      + '<td data-heading="Fix Version">' + fixCell + '</td>'
-      + '<td data-heading="PURL" class="purl-cell">' + esc(row.purl) + '</td>'
-      + '</tr>';
+      + '<span class="p-chip__value">' + esc(row.severity) + '</span></span></span>'
+      + '</div>'
+      + '<hr class="u-sv1" />'
+      + '<dl class="u-no-margin--bottom">'
+      + '<dt>Package</dt><dd>' + esc(row.package) + '</dd>'
+      + '<dt>Fix Version</dt><dd>' + fixHtml + '</dd>'
+      + '</dl>'
+      + '<details><summary class="u-text--muted">PURL</summary>'
+      + '<p class="purl-cell">' + esc(row.purl) + '</p></details>'
+      + '</div></div>';
   }
 
   function switchSerial(paneIdx, serialName) {
@@ -196,8 +197,8 @@ _TEMPLATE = """\
       document.getElementById('serial-data-' + paneIdx).textContent
     );
     var entry = allSerials[serialName];
-    document.querySelector('#table-' + paneIdx + ' tbody').innerHTML =
-      entry.rows.map(buildRow).join('');
+    var container = document.getElementById('cards-' + paneIdx);
+    container.innerHTML = entry.rows.map(buildCard).join('');
     var dateEl = document.getElementById('generated-date-' + paneIdx);
     if (dateEl) dateEl.textContent = 'Generated ' + entry.generated_date;
   }
@@ -280,46 +281,8 @@ _TEMPLATE = """\
     });
   }
 
-  // --- Column sorting ---
-  function getCellText(row, colIdx) {
-    return (row.cells[colIdx] ? row.cells[colIdx].textContent.trim() : '');
-  }
-
-  function sortTable(table, colIdx, direction) {
-    var tbody = table.tBodies[0];
-    var rows = Array.prototype.slice.call(tbody.rows);
-    rows.sort(function (a, b) {
-      var av = getCellText(a, colIdx);
-      var bv = getCellText(b, colIdx);
-      return direction === 'ascending' ? av.localeCompare(bv) : bv.localeCompare(av);
-    });
-    rows.forEach(function (r) { tbody.appendChild(r); });
-  }
-
-  function initSort(table) {
-    var headers = table.querySelectorAll('th[aria-sort]');
-    headers.forEach(function (th, colIdx) {
-      th.querySelector('.p-table__sort-button').addEventListener('click', function () {
-        var current = th.getAttribute('aria-sort');
-        var next = current === 'ascending' ? 'descending' : 'ascending';
-        headers.forEach(function (h) { h.setAttribute('aria-sort', 'none'); });
-        th.setAttribute('aria-sort', next);
-        sortTable(table, colIdx, next);
-      });
-    });
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
     initTabs();
-
-    document.querySelectorAll('table[id^="table-"]').forEach(function (table) {
-      initSort(table);
-      // Apply initial sort by Severity (col 1) descending.
-      var sevTh = table.querySelector('thead th:nth-child(2)');
-      if (sevTh) {
-        sortTable(table, 1, 'descending');
-      }
-    });
 
     // Wire up serial selectors.
     document.querySelectorAll('[id^="serial-select-"]').forEach(function (sel) {
