@@ -54,6 +54,7 @@ _TEMPLATE = """\
               id="tab-{{ loop.index }}"
               aria-controls="pane-{{ loop.index }}"
               aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+              data-solution-id="{{ distro.dirname | e }}"
               {% if not loop.first %}tabindex="-1"{% endif %}
             >{{ distro.label | e }}
               {%- set cnt = distro.serials[0].rows | length %}
@@ -201,6 +202,64 @@ _TEMPLATE = """\
     if (dateEl) dateEl.textContent = 'Generated ' + entry.generated_date;
   }
 
+  // --- URL hash navigation ---
+  function getActiveState() {
+    var activeTab = document.querySelector('[role="tab"][aria-selected="true"]');
+    if (!activeTab) return { solutionId: '', serialName: '' };
+    var solutionId = activeTab.dataset.solutionId || '';
+    var paneId = activeTab.getAttribute('aria-controls');
+    var paneIdx = paneId ? paneId.replace('pane-', '') : '';
+    var sel = paneIdx ? document.getElementById('serial-select-' + paneIdx) : null;
+    var serialName = sel ? sel.value : '';
+    return { solutionId: solutionId, serialName: serialName };
+  }
+
+  function updateHash() {
+    var state = getActiveState();
+    if (state.solutionId) {
+      window.location.hash = state.serialName
+        ? state.solutionId + '/' + state.serialName
+        : state.solutionId;
+    }
+  }
+
+  function applyHash() {
+    var hash = window.location.hash.replace(/^#/, '');
+    if (!hash) return;
+    var parts = hash.split('/');
+    var solutionId = parts[0].replace(/[^a-zA-Z0-9._-]/g, '');
+    var version = (parts[1] || '').replace(/[^a-zA-Z0-9._-]/g, '');
+    var tab = document.querySelector('[role="tab"][data-solution-id="' + solutionId + '"]');
+    if (!tab) return;
+    document.querySelectorAll('[role="tab"]').forEach(function (t) {
+      t.setAttribute('aria-selected', 'false');
+      t.setAttribute('tabindex', '-1');
+    });
+    document.querySelectorAll('[role="tabpanel"]').forEach(function (p) {
+      p.hidden = true;
+    });
+    tab.setAttribute('aria-selected', 'true');
+    tab.removeAttribute('tabindex');
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    if (version) {
+      var paneId = tab.getAttribute('aria-controls');
+      var paneIdx = paneId ? parseInt(paneId.replace('pane-', '')) : null;
+      if (paneIdx) {
+        var sel = document.getElementById('serial-select-' + paneIdx);
+        if (sel) {
+          for (var i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].value === version) {
+              sel.value = version;
+              switchSerial(paneIdx, version);
+              break;
+            }
+          }
+        }
+      }
+    }
+    updateHash();
+  }
+
   // --- Tab switching ---
   function initTabs() {
     var tabs = document.querySelectorAll('[role="tab"]');
@@ -216,6 +275,7 @@ _TEMPLATE = """\
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+        updateHash();
       });
     });
   }
@@ -265,8 +325,12 @@ _TEMPLATE = """\
     document.querySelectorAll('[id^="serial-select-"]').forEach(function (sel) {
       sel.addEventListener('change', function () {
         switchSerial(parseInt(sel.dataset.paneIdx), sel.value);
+        updateHash();
       });
     });
+
+    applyHash();
+    window.addEventListener('hashchange', applyHash);
   });
 </script>
 </body>
@@ -379,6 +443,7 @@ def main() -> None:
         ]
         distros.append({
             "label": label,
+            "dirname": dirname,
             "solution_url": f"{VCF_BASE_URL}/{dirname}?slug=true",
             "serials": serials,
             # Escape '</' so </script> can't break the JSON data element.

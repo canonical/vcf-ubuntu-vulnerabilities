@@ -169,6 +169,7 @@ def _make_distro(rows=None, extra_serial=False):
                         "generated_date": "2026-01-01 12:00 UTC"})
     return {
         "label": "Ubuntu 22.04 LTS (Jammy)",
+        "dirname": "ubuntu-22-04-lts-jammy-2",
         "solution_url": f"{VCF_BASE_URL}/ubuntu-22-04-lts-jammy-2?slug=true",
         "serials": serials,
         "serials_json": json.dumps(
@@ -216,3 +217,19 @@ class TestRenderHtml:
         html = render_html([_make_distro()])
         assert 'serial-data-1' in html
         assert '22.04.20260312' in html
+
+    def test_html_contains_data_solution_id(self):
+        html = render_html([_make_distro()])
+        assert 'data-solution-id="ubuntu-22-04-lts-jammy-2"' in html
+
+    def test_html_contains_update_hash_function(self):
+        html = render_html([_make_distro()])
+        assert 'updateHash' in html
+
+    def test_html_contains_apply_hash_function(self):
+        html = render_html([_make_distro()])
+        assert 'applyHash' in html
+
+    def test_html_contains_hashchange_listener(self):
+        html = render_html([_make_distro()])
+        assert 'hashchange' in html
