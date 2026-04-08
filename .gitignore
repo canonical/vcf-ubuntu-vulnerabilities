@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.python-version
+
+# uv
+.venv/
+
+# Build output
+dist/
+
+# Ruff
+.ruff_cache/
+
+# Pytest
+.pytest_cache/
