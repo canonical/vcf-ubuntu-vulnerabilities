@@ -56,7 +56,8 @@ _TEMPLATE = """\
               aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
               {% if not loop.first %}tabindex="-1"{% endif %}
             >{{ distro.label | e }}
-              <span class="p-badge u-no-margin--left" aria-label="{{ distro.serials[0].rows | length }} CVEs">{{ distro.serials[0].rows | length }}</span>
+              {%- set cnt = distro.serials[0].rows | length %}
+              <span class="p-badge u-no-margin--left" aria-label="{{ cnt }} CVEs">{{ cnt }}</span>
             </button>
           </div>
           {% endfor %}
@@ -114,7 +115,17 @@ _TEMPLATE = """\
                 </a>
               </td>
               <td data-heading="Severity">
-                <span class="{% if row.severity | lower in ('critical', 'high') %}p-chip--negative{% elif row.severity | lower == 'medium' %}p-chip--caution{% elif row.severity | lower == 'low' %}p-chip--positive{% else %}p-chip{% endif %} is-readonly is-inline is-dense">
+                {%- set sv = row.severity | lower %}
+                {%- if sv in ('critical', 'high') %}
+                  {%- set chip = 'p-chip--negative' %}
+                {%- elif sv == 'medium' %}
+                  {%- set chip = 'p-chip--caution' %}
+                {%- elif sv == 'low' %}
+                  {%- set chip = 'p-chip--positive' %}
+                {%- else %}
+                  {%- set chip = 'p-chip' %}
+                {%- endif %}
+                <span class="{{ chip }} is-readonly is-inline is-dense">
                   <span class="p-chip__value">{{ row.severity | e }}</span>
                 </span>
               </td>
@@ -159,13 +170,16 @@ _TEMPLATE = """\
   function buildRow(row) {
     var cls = row.fixed_version === 'pending' ? ' class="pending-row"' : '';
     var fixCell = row.fixed_version === 'pending'
-      ? '<span class="p-chip--caution is-readonly is-inline is-dense"><span class="p-chip__value">pending</span></span>'
+      ? '<span class="p-chip--caution is-readonly is-inline is-dense">'
+        + '<span class="p-chip__value">pending</span></span>'
       : esc(row.fixed_version);
     var chipClass = severityChipClass(row.severity);
     return '<tr' + cls + '>'
-      + '<td data-heading="CVE"><a href="' + esc(row.url) + '" target="_blank" rel="noopener noreferrer">'
+      + '<td data-heading="CVE">'
+      + '<a href="' + esc(row.url) + '" target="_blank" rel="noopener noreferrer">'
       + esc(row.cve_id) + '</a></td>'
-      + '<td data-heading="Severity"><span class="' + chipClass + ' is-readonly is-inline is-dense">'
+      + '<td data-heading="Severity">'
+      + '<span class="' + chipClass + ' is-readonly is-inline is-dense">'
       + '<span class="p-chip__value">' + esc(row.severity) + '</span></span></td>'
       + '<td data-heading="Package">' + esc(row.package) + '</td>'
       + '<td data-heading="Fix Version">' + fixCell + '</td>'
