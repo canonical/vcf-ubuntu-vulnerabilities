@@ -1,0 +1,2046 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ubuntu CVE Vulnerability Dashboard</title>
+  <link rel="stylesheet" href="vendor/vanilla-framework.min.css" />
+  <style>
+    .pending-row { background-color: #fff3cd; }
+    .purl-cell   { font-family: monospace; font-size: 0.8em; word-break: break-all; }
+    select.is-dense { width: auto; }
+  </style>
+</head>
+<body>
+<div class="p-strip is-shallow">
+  <div class="row">
+    <div class="col-12">
+      <h1>Ubuntu CVE Vulnerability Dashboard</h1>
+      <p class="u-text--muted">Generated 2026-04-08</p>
+
+      <div class="p-tabs">
+        <div class="p-tabs__list" role="tablist" aria-label="Ubuntu distributions">
+          
+          <div class="p-tabs__item">
+            <button
+              class="p-tabs__link"
+              role="tab"
+              id="tab-1"
+              aria-controls="pane-1"
+              aria-selected="true"
+              
+            >Ubuntu 22.04 LTS (Jammy)
+              <span class="p-badge u-no-margin--left" aria-label="30 CVEs">30</span>
+            </button>
+          </div>
+          
+          <div class="p-tabs__item">
+            <button
+              class="p-tabs__link"
+              role="tab"
+              id="tab-2"
+              aria-controls="pane-2"
+              aria-selected="false"
+              tabindex="-1"
+            >Ubuntu 24.04 LTS (Noble)
+              <span class="p-badge u-no-margin--left" aria-label="55 CVEs">55</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+
+      
+      <div
+        role="tabpanel"
+        id="pane-1"
+        aria-labelledby="tab-1"
+        
+      >
+        <div class="row u-sv1">
+          <div class="col-6 u-vertically-center">
+            <label for="serial-select-1"><strong>Serial:</strong></label>
+            <select id="serial-select-1"
+                    class="is-dense"
+                    data-pane-idx="1">
+              
+              <option value="22.04.20260312" selected>
+                22.04.20260312
+              </option>
+              
+            </select>
+          </div>
+          <div class="col-6 u-align--right u-vertically-center">
+            <a href="https://vcf.broadcom.com/vsc/services/details/ubuntu-22-04-lts-jammy-2?slug=true" target="_blank" rel="noopener noreferrer">
+              View VCF solution: Ubuntu 22.04 LTS (Jammy)
+            </a>
+          </div>
+        </div>
+        <script type="application/json"
+                id="serial-data-1">{"22.04.20260312": [{"cve_id": "CVE-2026-0964", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.9.6-2ubuntu0.22.04.7", "purl": "pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-0964"}, {"cve_id": "CVE-2026-0965", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.9.6-2ubuntu0.22.04.7", "purl": "pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-0965"}, {"cve_id": "CVE-2026-0966", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.9.6-2ubuntu0.22.04.7", "purl": "pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-0966"}, {"cve_id": "CVE-2026-0967", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.9.6-2ubuntu0.22.04.7", "purl": "pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-0967"}, {"cve_id": "CVE-2026-0968", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.9.6-2ubuntu0.22.04.7", "purl": "pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-0968"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-headers-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-hwe-6.8-headers-6.8.0-106", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-modules-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-modules-extra-6.8.0-106-generic", "fixed_version": "6.8.0-107.107~22.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-25749", "severity": "unknown", "package": "xxd", "fixed_version": "2:8.2.3995-1ubuntu2.26", "purl": "pkg:deb/ubuntu/xxd@2:8.2.3995-1ubuntu2.24?distro=jammy", "url": "https://ubuntu.com/security/CVE-2026-25749"}]}</script>
+        <table
+          class="p-table--mobile-card"
+          id="table-1"
+          aria-label="Ubuntu 22.04 LTS (Jammy) CVE vulnerabilities"
+        >
+          <thead>
+            <tr>
+              <th aria-sort="none"><button class="p-table__sort-button">CVE</button></th>
+              <th aria-sort="descending"><button class="p-table__sort-button">Severity</button></th>
+              <th aria-sort="none"><button class="p-table__sort-button">Package</button></th>
+              <th aria-sort="none"><button class="p-table__sort-button">Fix Version</button></th>
+              <th>PURL</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0964" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0964
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.9.6-2ubuntu0.22.04.7
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0965" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0965
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.9.6-2ubuntu0.22.04.7
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0966" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0966
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.9.6-2ubuntu0.22.04.7
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0967" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0967
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.9.6-2ubuntu0.22.04.7
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0968" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0968
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.9.6-2ubuntu0.22.04.7
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.9.6-2ubuntu0.22.04.6?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.8-headers-6.8.0-106</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.8-headers-6.8.0-106@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.8.0-106-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107~22.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.8.0-106-generic@6.8.0-106.106~22.04.1?distro=jammy</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-25749" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-25749
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">xxd</td>
+              <td data-heading="Fix Version">
+                
+                2:8.2.3995-1ubuntu2.26
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/xxd@2:8.2.3995-1ubuntu2.24?distro=jammy</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+      <div
+        role="tabpanel"
+        id="pane-2"
+        aria-labelledby="tab-2"
+        hidden
+      >
+        <div class="row u-sv1">
+          <div class="col-6 u-vertically-center">
+            <label for="serial-select-2"><strong>Serial:</strong></label>
+            <select id="serial-select-2"
+                    class="is-dense"
+                    data-pane-idx="2">
+              
+              <option value="24.04.20260313" selected>
+                24.04.20260313
+              </option>
+              
+            </select>
+          </div>
+          <div class="col-6 u-align--right u-vertically-center">
+            <a href="https://vcf.broadcom.com/vsc/services/details/ubuntu-24-04-lts-noble-2?slug=true" target="_blank" rel="noopener noreferrer">
+              View VCF solution: Ubuntu 24.04 LTS (Noble)
+            </a>
+          </div>
+        </div>
+        <script type="application/json"
+                id="serial-data-2">{"24.04.20260313": [{"cve_id": "CVE-2026-0964", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.10.6-2ubuntu0.4", "purl": "pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-0964"}, {"cve_id": "CVE-2026-0965", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.10.6-2ubuntu0.4", "purl": "pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-0965"}, {"cve_id": "CVE-2026-0966", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.10.6-2ubuntu0.4", "purl": "pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-0966"}, {"cve_id": "CVE-2026-0967", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.10.6-2ubuntu0.4", "purl": "pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-0967"}, {"cve_id": "CVE-2026-0968", "severity": "unknown", "package": "libssh-4", "fixed_version": "0.10.6-2ubuntu0.4", "purl": "pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-0968"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-headers-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-hwe-6.17-headers-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-hwe-6.17-tools-6.17.0-19", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-modules-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-modules-extra-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23079", "severity": "unknown", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23079"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-tools-6.17.0-19-generic", "fixed_version": "6.17.0-20.20~24.04.1", "purl": "pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-23111", "severity": "high", "package": "linux-tools-common", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23111"}, {"cve_id": "CVE-2026-23112", "severity": "high", "package": "linux-tools-common", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23112"}, {"cve_id": "CVE-2026-23231", "severity": "high", "package": "linux-tools-common", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23231"}, {"cve_id": "CVE-2026-23268", "severity": "high", "package": "linux-tools-common", "fixed_version": "6.8.0-107.107", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23268"}, {"cve_id": "CVE-2026-23273", "severity": "unknown", "package": "linux-tools-common", "fixed_version": "pending", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23273"}, {"cve_id": "CVE-2026-23410", "severity": "high", "package": "linux-tools-common", "fixed_version": "6.8.0-107.107", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23410"}, {"cve_id": "CVE-2026-23411", "severity": "high", "package": "linux-tools-common", "fixed_version": "6.8.0-107.107", "purl": "pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-23411"}, {"cve_id": "CVE-2026-25749", "severity": "unknown", "package": "xxd", "fixed_version": "2:9.1.0016-1ubuntu7.10", "purl": "pkg:deb/ubuntu/xxd@2:9.1.0016-1ubuntu7.9?distro=noble", "url": "https://ubuntu.com/security/CVE-2026-25749"}]}</script>
+        <table
+          class="p-table--mobile-card"
+          id="table-2"
+          aria-label="Ubuntu 24.04 LTS (Noble) CVE vulnerabilities"
+        >
+          <thead>
+            <tr>
+              <th aria-sort="none"><button class="p-table__sort-button">CVE</button></th>
+              <th aria-sort="descending"><button class="p-table__sort-button">Severity</button></th>
+              <th aria-sort="none"><button class="p-table__sort-button">Package</button></th>
+              <th aria-sort="none"><button class="p-table__sort-button">Fix Version</button></th>
+              <th>PURL</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0964" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0964
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.10.6-2ubuntu0.4
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0965" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0965
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.10.6-2ubuntu0.4
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0966" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0966
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.10.6-2ubuntu0.4
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0967" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0967
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.10.6-2ubuntu0.4
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-0968" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-0968
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">libssh-4</td>
+              <td data-heading="Fix Version">
+                
+                0.10.6-2ubuntu0.4
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/libssh-4@0.10.6-2ubuntu0.3?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-headers-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-headers-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-headers-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-headers-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-hwe-6.17-tools-6.17.0-19</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-hwe-6.17-tools-6.17.0-19@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-modules-extra-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-modules-extra-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23079" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23079
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-6.17.0-19-generic</td>
+              <td data-heading="Fix Version">
+                
+                6.17.0-20.20~24.04.1
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-6.17.0-19-generic@6.17.0-19.19~24.04.2?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23111" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23111
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23112" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23112
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23231" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23231
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23268" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23268
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr class="pending-row">
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23273" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23273
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                <span class="p-chip--caution is-readonly is-inline is-dense">
+                  <span class="p-chip__value">pending</span>
+                </span>
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23410" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23410
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-23411" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-23411
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip--negative is-readonly is-inline is-dense">
+                  <span class="p-chip__value">high</span>
+                </span>
+              </td>
+              <td data-heading="Package">linux-tools-common</td>
+              <td data-heading="Fix Version">
+                
+                6.8.0-107.107
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble</td>
+            </tr>
+            
+            <tr>
+              <td data-heading="CVE">
+                <a href="https://ubuntu.com/security/CVE-2026-25749" target="_blank" rel="noopener noreferrer">
+                  CVE-2026-25749
+                </a>
+              </td>
+              <td data-heading="Severity">
+                <span class="p-chip is-readonly is-inline is-dense">
+                  <span class="p-chip__value">unknown</span>
+                </span>
+              </td>
+              <td data-heading="Package">xxd</td>
+              <td data-heading="Fix Version">
+                
+                2:9.1.0016-1ubuntu7.10
+                
+              </td>
+              <td data-heading="PURL" class="purl-cell">pkg:deb/ubuntu/xxd@2:9.1.0016-1ubuntu7.9?distro=noble</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function severityChipClass(sev) {
+    var s = sev.toLowerCase();
+    if (s === 'critical' || s === 'high') return 'p-chip--negative';
+    if (s === 'medium') return 'p-chip--caution';
+    if (s === 'low') return 'p-chip--positive';
+    return 'p-chip';
+  }
+
+  function buildRow(row) {
+    var cls = row.fixed_version === 'pending' ? ' class="pending-row"' : '';
+    var fixCell = row.fixed_version === 'pending'
+      ? '<span class="p-chip--caution is-readonly is-inline is-dense">'
+        + '<span class="p-chip__value">pending</span></span>'
+      : esc(row.fixed_version);
+    var chipClass = severityChipClass(row.severity);
+    return '<tr' + cls + '>'
+      + '<td data-heading="CVE">'
+      + '<a href="' + esc(row.url) + '" target="_blank" rel="noopener noreferrer">'
+      + esc(row.cve_id) + '</a></td>'
+      + '<td data-heading="Severity">'
+      + '<span class="' + chipClass + ' is-readonly is-inline is-dense">'
+      + '<span class="p-chip__value">' + esc(row.severity) + '</span></span></td>'
+      + '<td data-heading="Package">' + esc(row.package) + '</td>'
+      + '<td data-heading="Fix Version">' + fixCell + '</td>'
+      + '<td data-heading="PURL" class="purl-cell">' + esc(row.purl) + '</td>'
+      + '</tr>';
+  }
+
+  function switchSerial(paneIdx, serialName) {
+    var allSerials = JSON.parse(
+      document.getElementById('serial-data-' + paneIdx).textContent
+    );
+    document.querySelector('#table-' + paneIdx + ' tbody').innerHTML =
+      allSerials[serialName].map(buildRow).join('');
+  }
+
+  // --- Tab switching ---
+  function initTabs() {
+    var tabs = document.querySelectorAll('[role="tab"]');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) {
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+        document.querySelectorAll('[role="tabpanel"]').forEach(function (p) {
+          p.hidden = true;
+        });
+        tab.setAttribute('aria-selected', 'true');
+        tab.removeAttribute('tabindex');
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+      });
+    });
+  }
+
+  // --- Column sorting ---
+  function getCellText(row, colIdx) {
+    return (row.cells[colIdx] ? row.cells[colIdx].textContent.trim() : '');
+  }
+
+  function sortTable(table, colIdx, direction) {
+    var tbody = table.tBodies[0];
+    var rows = Array.prototype.slice.call(tbody.rows);
+    rows.sort(function (a, b) {
+      var av = getCellText(a, colIdx);
+      var bv = getCellText(b, colIdx);
+      return direction === 'ascending' ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+    rows.forEach(function (r) { tbody.appendChild(r); });
+  }
+
+  function initSort(table) {
+    var headers = table.querySelectorAll('th[aria-sort]');
+    headers.forEach(function (th, colIdx) {
+      th.querySelector('.p-table__sort-button').addEventListener('click', function () {
+        var current = th.getAttribute('aria-sort');
+        var next = current === 'ascending' ? 'descending' : 'ascending';
+        headers.forEach(function (h) { h.setAttribute('aria-sort', 'none'); });
+        th.setAttribute('aria-sort', next);
+        sortTable(table, colIdx, next);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initTabs();
+
+    document.querySelectorAll('table[id^="table-"]').forEach(function (table) {
+      initSort(table);
+      // Apply initial sort by Severity (col 1) descending.
+      var sevTh = table.querySelector('thead th:nth-child(2)');
+      if (sevTh) {
+        sortTable(table, 1, 'descending');
+      }
+    });
+
+    // Wire up serial selectors.
+    document.querySelectorAll('[id^="serial-select-"]').forEach(function (sel) {
+      sel.addEventListener('change', function () {
+        switchSerial(parseInt(sel.dataset.paneIdx), sel.value);
+      });
+    });
+  });
+</script>
+</body>
+</html>
