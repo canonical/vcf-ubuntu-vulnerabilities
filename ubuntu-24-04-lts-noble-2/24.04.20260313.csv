@@ -54,4 +54,3 @@ CVE-2026-23273,unknown,,20260313,noble,linux-tools-common,,https://ubuntu.com/se
 CVE-2026-23410,high,,20260313,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2026-23410,6.8.0-106.106,6.8.0-107.107,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble
 CVE-2026-23411,high,,20260313,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2026-23411,6.8.0-106.106,6.8.0-107.107,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-106.106?distro=noble
 CVE-2026-25749,unknown,,20260313,noble,xxd,,https://ubuntu.com/security/CVE-2026-25749,2:9.1.0016-1ubuntu7.9,2:9.1.0016-1ubuntu7.10,,,pkg:deb/ubuntu/xxd@2:9.1.0016-1ubuntu7.9?distro=noble
-CVE-2026-26269,unknown,,20260313,noble,xxd,,https://ubuntu.com/security/CVE-2026-26269,2:9.1.0016-1ubuntu7.9,2:9.1.0016-1ubuntu7.10,,,pkg:deb/ubuntu/xxd@2:9.1.0016-1ubuntu7.9?distro=noble
