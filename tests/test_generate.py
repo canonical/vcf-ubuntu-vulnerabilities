@@ -1,8 +1,10 @@
 """Tests for the static HTML report generator."""
 
+import re
 
 from scripts.generate import (
     VCF_BASE_URL,
+    csv_commit_date,
     discover_csvs,
     distro_label,
     parse_csv,
@@ -110,6 +112,35 @@ class TestParseCsv:
         assert pending["cve_id"] == "CVE-2026-0002"
 
 
+class TestCsvCommitDate:
+    _UTC_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$")
+
+    def test_returns_utc_timestamp_when_repo_is_none(self, tmp_path):
+        result = csv_commit_date(None, tmp_path / "any.csv")
+        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+
+    def test_returns_utc_timestamp_when_file_not_in_git(self, tmp_path):
+        """Files in a real git repo but not yet committed fall back to current UTC time."""
+        import git
+        repo = git.Repo.init(tmp_path)
+        csv_path = tmp_path / "untracked.csv"
+        csv_path.write_text("data")
+        result = csv_commit_date(repo, csv_path)
+        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+
+    def test_returns_commit_utc_timestamp_for_committed_file(self, tmp_path):
+        import git
+        repo = git.Repo.init(tmp_path)
+        repo.config_writer().set_value("user", "name", "Test").release()
+        repo.config_writer().set_value("user", "email", "t@t.com").release()
+        csv_path = tmp_path / "report.csv"
+        csv_path.write_text("data")
+        repo.index.add(["report.csv"])
+        repo.index.commit("add report")
+        result = csv_commit_date(repo, csv_path)
+        assert self._UTC_PATTERN.match(result), f"Unexpected format: {result!r}"
+
+
 # Shared minimal distro fixture for render_html tests.
 _SAMPLE_ROW = {
     "cve_id": "CVE-2026-0001",
@@ -131,14 +162,18 @@ _PENDING_ROW = {
 
 def _make_distro(rows=None, extra_serial=False):
     import json
-    serials = [{"name": "22.04.20260312", "rows": rows or [_SAMPLE_ROW]}]
+    serials = [{"name": "22.04.20260312", "rows": rows or [_SAMPLE_ROW],
+                 "generated_date": "2026-03-12 09:00 UTC"}]
     if extra_serial:
-        serials.append({"name": "22.04.20260101", "rows": rows or [_SAMPLE_ROW]})
+        serials.append({"name": "22.04.20260101", "rows": rows or [_SAMPLE_ROW],
+                        "generated_date": "2026-01-01 12:00 UTC"})
     return {
         "label": "Ubuntu 22.04 LTS (Jammy)",
         "solution_url": f"{VCF_BASE_URL}/ubuntu-22-04-lts-jammy-2?slug=true",
         "serials": serials,
-        "serials_json": json.dumps({s["name"]: s["rows"] for s in serials}),
+        "serials_json": json.dumps(
+            {s["name"]: {"rows": s["rows"], "generated_date": s["generated_date"]} for s in serials}
+        ),
     }
 
 

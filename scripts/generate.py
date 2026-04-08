@@ -4,9 +4,10 @@ import csv
 import json
 import re
 import urllib.request
-from datetime import date
+from datetime import UTC, datetime
 from pathlib import Path
 
+import git
 from jinja2 import Environment, select_autoescape
 
 _VENDOR_ASSETS = {
@@ -42,7 +43,6 @@ _TEMPLATE = """\
   <div class="row">
     <div class="col-12">
       <h1>Ubuntu CVE Vulnerability Dashboard</h1>
-      <p class="u-text--muted">Generated {{ generated_date }}</p>
 
       <div class="p-tabs">
         <div class="p-tabs__list" role="tablist" aria-label="Ubuntu distributions">
@@ -83,6 +83,9 @@ _TEMPLATE = """\
               </option>
               {% endfor %}
             </select>
+            <span class="u-text--muted" id="generated-date-{{ loop.index }}">
+              Generated {{ distro.serials[0].generated_date }}
+            </span>
           </div>
           <div class="col-6 u-align--right u-vertically-center">
             <a href="{{ distro.solution_url | e }}" target="_blank" rel="noopener noreferrer">
@@ -191,8 +194,11 @@ _TEMPLATE = """\
     var allSerials = JSON.parse(
       document.getElementById('serial-data-' + paneIdx).textContent
     );
+    var entry = allSerials[serialName];
     document.querySelector('#table-' + paneIdx + ' tbody').innerHTML =
-      allSerials[serialName].map(buildRow).join('');
+      entry.rows.map(buildRow).join('');
+    var dateEl = document.getElementById('generated-date-' + paneIdx);
+    if (dateEl) dateEl.textContent = 'Generated ' + entry.generated_date;
   }
 
   // --- Tab switching ---
@@ -316,14 +322,28 @@ def parse_csv(path: Path) -> list[dict]:
     return rows
 
 
+def csv_commit_date(repo, path: Path) -> str:
+    """Return the UTC ISO-8601 datetime of the most recent commit touching *path*.
+
+    Falls back to the current UTC time if the file has no commits or there is no repo.
+    """
+    if repo is None:
+        return datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+    try:
+        commits = list(repo.iter_commits(paths=str(path), max_count=1))
+        if commits:
+            dt = commits[0].committed_datetime.astimezone(UTC)
+            return dt.strftime("%Y-%m-%d %H:%M UTC")
+    except Exception:
+        pass
+    return datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+
+
 def render_html(distros: list[dict]) -> str:
     """Render the dashboard HTML from the distros data structure."""
     env = Environment(autoescape=select_autoescape(["html"]))
     template = env.from_string(_TEMPLATE)
-    return template.render(
-        distros=distros,
-        generated_date=date.today().isoformat(),
-    )
+    return template.render(distros=distros)
 
 
 def fetch_vendor_assets(dist: Path) -> None:
@@ -346,16 +366,27 @@ def main() -> None:
 
     fetch_vendor_assets(dist)
 
+    try:
+        repo = git.Repo(root, search_parent_directories=True)
+    except git.InvalidGitRepositoryError:
+        repo = None
+
     distros = []
     for label, dirname, csvs in discover_csvs(root):
-        serials = [{"name": p.stem, "rows": parse_csv(p)} for p in csvs]
+        serials = [
+            {"name": p.stem, "rows": parse_csv(p), "generated_date": csv_commit_date(repo, p)}
+            for p in csvs
+        ]
         distros.append({
             "label": label,
             "solution_url": f"{VCF_BASE_URL}/{dirname}?slug=true",
             "serials": serials,
             # Escape '</' so </script> can't break the JSON data element.
             "serials_json": json.dumps(
-                {s["name"]: s["rows"] for s in serials},
+                {
+                    s["name"]: {"rows": s["rows"], "generated_date": s["generated_date"]}
+                    for s in serials
+                },
                 ensure_ascii=False,
             ).replace("</", "<\\/"),
         })
