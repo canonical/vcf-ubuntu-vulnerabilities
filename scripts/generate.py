@@ -34,9 +34,23 @@ _TEMPLATE = """\
   <title>Ubuntu CVE Vulnerability Dashboard</title>
   <link rel="icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="vendor/vanilla-framework.min.css" />
+  <script>
+    // Apply Vanilla Framework dark theme class from OS colour preference.
+    (function () {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(e) {
+        document.documentElement.classList.toggle('is-dark', e.matches);
+      }
+      apply(mq);
+      if (mq.addEventListener) { mq.addEventListener('change', apply); }
+    }());
+  </script>
   <style>
-    html { overflow-y: scroll; }
+    html { overflow-y: scroll; color-scheme: light dark; }
     .p-card.is-pending { background-color: #fff3cd; }
+    @media (prefers-color-scheme: dark) {
+      .p-card.is-pending { background-color: #3d2e00; }
+    }
     .purl-cell { font-family: monospace; font-size: 0.8em; word-break: break-all; }
     select.is-dense { width: auto; }
     /* Responsive view: cards on small screens, table on large screens */
@@ -62,9 +76,13 @@ _TEMPLATE = """\
 <div class="p-strip is-shallow">
   <div class="row">
     <div class="col-12">
-      <img src="assets/Canonical-Light-Digital.png"
-           alt="Canonical"
-           style="max-height: 5rem; display: block; margin-bottom: 1rem;" />
+      <picture>
+        <source srcset="assets/Canonical-Dark-Digital.png"
+                media="(prefers-color-scheme: dark)" />
+        <img src="assets/Canonical-Light-Digital.png"
+             alt="Canonical"
+             style="max-height: 5rem; display: block; margin-bottom: 1rem;" />
+      </picture>
       <h1>Ubuntu CVE Vulnerability Dashboard</h1>
 
       <div class="p-tabs">
