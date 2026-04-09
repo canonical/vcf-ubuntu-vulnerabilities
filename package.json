@@ -1,0 +1,13 @@
+{
+  "name": "vcf-ubuntu-vulnerabilities-e2e",
+  "private": true,
+  "scripts": {
+    "cy:run": "ELECTRON_EXTRA_LAUNCH_ARGS='--no-sandbox --disable-dev-shm-usage --disable-gpu --use-gl=swiftshader' start-server-and-test 'serve dist -l 8080' http://localhost:8080 'cypress run'",
+    "cy:open": "start-server-and-test 'serve dist -l 8080' http://localhost:8080 'cypress run --headed --no-exit --browser chromium'"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "serve": "^14.2.4",
+    "start-server-and-test": "^2.0.10"
+  }
+}
