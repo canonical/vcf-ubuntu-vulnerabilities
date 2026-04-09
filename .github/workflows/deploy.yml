@@ -29,6 +29,35 @@ jobs:
       - name: Test
         run: uv run pytest -v
 
+  e2e:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Python dependencies
+        run: uv sync
+
+      - name: Generate dashboard
+        run: uv run python -m scripts.generate
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Run Cypress e2e tests
+        run: npm run cy:run
+
   deploy:
     needs: test
     runs-on: ubuntu-latest

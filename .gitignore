@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 .python-version
+*.egg-info/
 
 # uv
 .venv/
@@ -15,3 +16,8 @@ dist/
 
 # Pytest
 .pytest_cache/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+node_modules/

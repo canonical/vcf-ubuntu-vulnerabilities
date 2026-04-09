@@ -33,6 +33,7 @@ _TEMPLATE = """\
   <title>Ubuntu CVE Vulnerability Dashboard</title>
   <link rel="stylesheet" href="vendor/vanilla-framework.min.css" />
   <style>
+    html { overflow-y: scroll; }
     .p-card.is-pending { background-color: #fff3cd; }
     .purl-cell { font-family: monospace; font-size: 0.8em; word-break: break-all; }
     select.is-dense { width: auto; }
@@ -84,7 +85,9 @@ _TEMPLATE = """\
               </option>
               {% endfor %}
             </select>
-            <span class="u-text--muted" id="generated-date-{{ loop.index }}">
+            <span class="u-text--muted"
+                  id="generated-date-{{ loop.index }}"
+                  data-cy="generated-date">
               Generated {{ distro.serials[0].generated_date }}
             </span>
           </div>
@@ -200,7 +203,9 @@ _TEMPLATE = """\
     var container = document.getElementById('cards-' + paneIdx);
     container.innerHTML = entry.rows.map(buildCard).join('');
     var dateEl = document.getElementById('generated-date-' + paneIdx);
-    if (dateEl) dateEl.textContent = 'Generated ' + entry.generated_date;
+    if (dateEl) {
+      dateEl.textContent = 'Generated ' + entry.generated_date;
+    }
   }
 
   // --- URL hash navigation ---
