@@ -37,6 +37,23 @@ _TEMPLATE = """\
     .p-card.is-pending { background-color: #fff3cd; }
     .purl-cell { font-family: monospace; font-size: 0.8em; word-break: break-all; }
     select.is-dense { width: auto; }
+    /* Responsive view: cards on small screens, table on large screens */
+    .vuln-table-view { display: none; }
+    @media (min-width: 1036px) {
+      .vuln-cards-view { display: none; }
+      .vuln-table-view { display: block; }
+    }
+    /* Sort button styles */
+    .vuln-sort-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0;
+      color: inherit;
+    }
+    th[aria-sort="ascending"] .vuln-sort-btn::after { content: ' \2191'; }
+    th[aria-sort="descending"] .vuln-sort-btn::after { content: ' \2193'; }
   </style>
 </head>
 <body>
@@ -99,7 +116,7 @@ _TEMPLATE = """\
         </div>
         <script type="application/json"
                 id="serial-data-{{ loop.index }}">{{ distro.serials_json | safe }}</script>
-        <div class="row" id="cards-{{ loop.index }}">
+        <div class="row vuln-cards-view" id="cards-{{ loop.index }}" data-cy="cards-view">
           {% for row in distro.serials[0].rows %}
           {%- set sv = row.severity | lower %}
           {%- if sv == 'critical' or sv == 'high' %}
@@ -144,6 +161,65 @@ _TEMPLATE = """\
             </div>
           </div>
           {% endfor %}
+        </div>
+        <div class="vuln-table-view" id="table-wrap-{{ loop.index }}" data-cy="data-table">
+          <table class="p-table" id="table-{{ loop.index }}">
+            <thead>
+              <tr>
+                <th aria-sort="none">
+                  <button class="vuln-sort-btn" data-col="cve_id"
+                          data-pane="{{ loop.index }}">CVE ID</button>
+                </th>
+                <th aria-sort="none">
+                  <button class="vuln-sort-btn" data-col="severity"
+                          data-pane="{{ loop.index }}">Severity</button>
+                </th>
+                <th aria-sort="none">
+                  <button class="vuln-sort-btn" data-col="package"
+                          data-pane="{{ loop.index }}">Package</button>
+                </th>
+                <th aria-sort="none">
+                  <button class="vuln-sort-btn" data-col="fixed_version"
+                          data-pane="{{ loop.index }}">Fix Version</button>
+                </th>
+                <th>PURL</th>
+              </tr>
+            </thead>
+            <tbody id="table-body-{{ loop.index }}">
+              {% for row in distro.serials[0].rows %}
+              {%- set sv = row.severity | lower %}
+              {%- if sv == 'critical' or sv == 'high' %}
+                {%- set chip = 'p-chip--negative' %}
+              {%- elif sv == 'medium' %}
+                {%- set chip = 'p-chip--caution' %}
+              {%- elif sv == 'low' %}
+                {%- set chip = 'p-chip--positive' %}
+              {%- else %}
+                {%- set chip = 'p-chip' %}
+              {%- endif %}
+              <tr>
+                <td>
+                  <a href="{{ row.url | e }}" target="_blank"
+                     rel="noopener noreferrer">{{ row.cve_id | e }}</a>
+                </td>
+                <td>
+                  <span class="{{ chip }} is-readonly is-inline is-dense">
+                    <span class="p-chip__value">{{ row.severity | e }}</span>
+                  </span>
+                </td>
+                <td>{{ row.package | e }}</td>
+                <td>
+                  {%- if row.fixed_version == 'pending' %}
+                  <span class="p-chip--caution is-readonly is-inline is-dense">
+                    <span class="p-chip__value">pending</span>
+                  </span>
+                  {%- else %}{{ row.fixed_version | e }}{%- endif %}
+                </td>
+                <td class="purl-cell">{{ row.purl | e }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
       </div>
       {% endfor %}
@@ -195,6 +271,74 @@ _TEMPLATE = """\
       + '</div></div>';
   }
 
+  // Sort state per pane: keyed by pane index, value is { col, dir ('asc'|'desc') }
+  var _sortState = {};
+
+  function sortRows(rows, col, dir) {
+    return rows.slice().sort(function (a, b) {
+      var av = String(a[col]).toLowerCase();
+      var bv = String(b[col]).toLowerCase();
+      if (av < bv) return dir === 'asc' ? -1 : 1;
+      if (av > bv) return dir === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }
+
+  function buildTableRow(row) {
+    var chipClass = severityChipClass(row.severity);
+    var fixHtml = row.fixed_version === 'pending'
+      ? '<span class="p-chip--caution is-readonly is-inline is-dense">'
+        + '<span class="p-chip__value">pending</span></span>'
+      : esc(row.fixed_version);
+    return '<tr>'
+      + '<td><a href="' + esc(row.url) + '" target="_blank" rel="noopener noreferrer">'
+      + esc(row.cve_id) + '</a></td>'
+      + '<td><span class="' + chipClass + ' is-readonly is-inline is-dense">'
+      + '<span class="p-chip__value">' + esc(row.severity) + '</span></span></td>'
+      + '<td>' + esc(row.package) + '</td>'
+      + '<td>' + fixHtml + '</td>'
+      + '<td class="purl-cell">' + esc(row.purl) + '</td>'
+      + '</tr>';
+  }
+
+  function renderTableBody(paneIdx, rows) {
+    var state = _sortState[paneIdx];
+    var sorted = state ? sortRows(rows, state.col, state.dir) : rows;
+    var tbody = document.getElementById('table-body-' + paneIdx);
+    if (tbody) {
+      tbody.innerHTML = sorted.map(buildTableRow).join('');
+    }
+    var tableWrap = document.getElementById('table-wrap-' + paneIdx);
+    if (!tableWrap) return;
+    tableWrap.querySelectorAll('th[aria-sort]').forEach(function (th) {
+      var btn = th.querySelector('.vuln-sort-btn');
+      if (!btn) return;
+      if (state && btn.dataset.col === state.col) {
+        th.setAttribute('aria-sort', state.dir === 'asc' ? 'ascending' : 'descending');
+      } else {
+        th.setAttribute('aria-sort', 'none');
+      }
+    });
+  }
+
+  function initSortButtons() {
+    document.querySelectorAll('.vuln-sort-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var paneIdx = parseInt(btn.dataset.pane);
+        var col = btn.dataset.col;
+        var cur = _sortState[paneIdx];
+        var dir = (cur && cur.col === col && cur.dir === 'asc') ? 'desc' : 'asc';
+        _sortState[paneIdx] = { col: col, dir: dir };
+        var allSerials = JSON.parse(
+          document.getElementById('serial-data-' + paneIdx).textContent
+        );
+        var sel = document.getElementById('serial-select-' + paneIdx);
+        var serialName = sel ? sel.value : Object.keys(allSerials)[0];
+        renderTableBody(paneIdx, allSerials[serialName].rows);
+      });
+    });
+  }
+
   function switchSerial(paneIdx, serialName) {
     var allSerials = JSON.parse(
       document.getElementById('serial-data-' + paneIdx).textContent
@@ -206,6 +350,7 @@ _TEMPLATE = """\
     if (dateEl) {
       dateEl.textContent = 'Generated ' + entry.generated_date;
     }
+    renderTableBody(paneIdx, entry.rows);
   }
 
   // --- URL hash navigation ---
@@ -288,6 +433,7 @@ _TEMPLATE = """\
 
   document.addEventListener('DOMContentLoaded', function () {
     initTabs();
+    initSortButtons();
 
     // Wire up serial selectors.
     document.querySelectorAll('[id^="serial-select-"]').forEach(function (sel) {
