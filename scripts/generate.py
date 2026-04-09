@@ -3,6 +3,7 @@
 import csv
 import json
 import re
+import shutil
 import urllib.request
 from datetime import UTC, datetime
 from pathlib import Path
@@ -31,10 +32,25 @@ _TEMPLATE = """\
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ubuntu CVE Vulnerability Dashboard</title>
+  <link rel="icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="vendor/vanilla-framework.min.css" />
+  <script>
+    // Apply Vanilla Framework dark theme class from OS colour preference.
+    (function () {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(e) {
+        document.documentElement.classList.toggle('is-dark', e.matches);
+      }
+      apply(mq);
+      if (mq.addEventListener) { mq.addEventListener('change', apply); }
+    }());
+  </script>
   <style>
-    html { overflow-y: scroll; }
+    html { overflow-y: scroll; color-scheme: light dark; }
     .p-card.is-pending { background-color: #fff3cd; }
+    @media (prefers-color-scheme: dark) {
+      .p-card.is-pending { background-color: #3d2e00; }
+    }
     .purl-cell { font-family: monospace; font-size: 0.8em; word-break: break-all; }
     select.is-dense { width: auto; }
     /* Responsive view: cards on small screens, table on large screens */
@@ -60,6 +76,13 @@ _TEMPLATE = """\
 <div class="p-strip is-shallow">
   <div class="row">
     <div class="col-12">
+      <picture>
+        <source srcset="assets/Canonical-Dark-Digital.png"
+                media="(prefers-color-scheme: dark)" />
+        <img src="assets/Canonical-Light-Digital.png"
+             alt="Canonical"
+             style="max-height: 5rem; display: block; margin-bottom: 1rem;" />
+      </picture>
       <h1>Ubuntu CVE Vulnerability Dashboard</h1>
 
       <div class="p-tabs">
@@ -537,12 +560,23 @@ def fetch_vendor_assets(dist: Path) -> None:
                 f.write(resp.read())
 
 
+def copy_static_assets(root: Path, dist: Path) -> None:
+    """Copy files from assets/ into dist/assets/ (overwrites on each build)."""
+    src = root / "assets"
+    dst = dist / "assets"
+    dst.mkdir(exist_ok=True)
+    for asset in src.iterdir():
+        if asset.is_file():
+            shutil.copy2(asset, dst / asset.name)
+
+
 def main() -> None:
     root = Path(__file__).parent.parent
     dist = root / "dist"
     dist.mkdir(exist_ok=True)
 
     fetch_vendor_assets(dist)
+    copy_static_assets(root, dist)
 
     try:
         repo = git.Repo(root, search_parent_directories=True)
