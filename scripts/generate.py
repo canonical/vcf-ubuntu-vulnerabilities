@@ -68,8 +68,6 @@ _TEMPLATE = """\
       padding: 0;
       color: inherit;
     }
-    th[aria-sort="ascending"] .vuln-sort-btn::after { content: ' \2191'; }
-    th[aria-sort="descending"] .vuln-sort-btn::after { content: ' \2193'; }
   </style>
 </head>
 <body>
