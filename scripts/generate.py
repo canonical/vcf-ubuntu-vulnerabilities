@@ -19,10 +19,11 @@ _VENDOR_ASSETS = {
 
 # Maps directory name fragments to human-readable distro labels.
 _KNOWN_DISTROS = {
+    "bionic": "Ubuntu 18.04 LTS (Bionic)",
+    "focal": "Ubuntu 20.04 LTS (Focal)",
     "jammy": "Ubuntu 22.04 LTS (Jammy)",
     "noble": "Ubuntu 24.04 LTS (Noble)",
-    "focal": "Ubuntu 20.04 LTS (Focal)",
-    "bionic": "Ubuntu 18.04 LTS (Bionic)",
+    "resolute": "Ubuntu 26.04 LTS (Resolute)",
 }
 
 # Empty-state copy shown when a serial has no CVEs. Defined once here and shared

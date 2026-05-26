@@ -23,6 +23,9 @@ class TestDistroLabel:
     def test_noble_dirname(self):
         assert distro_label("ubuntu-24-04-lts-noble-2") == "Ubuntu 24.04 LTS (Noble)"
 
+    def test_resolute_dirname(self):
+        assert distro_label("ubuntu-26-04-lts-resolute-2") == "Ubuntu 26.04 LTS (Resolute)"
+
     def test_unknown_dirname_falls_back_to_titlecase(self):
         # Unknown names should be returned in a reasonable human-readable form
         # rather than raising an error.
@@ -46,21 +49,23 @@ class TestPickLatestCsv:
 
 
 class TestDiscoverCsvs:
-    def test_finds_both_distro_directories(self, repo_tree):
+    def test_finds_all_distro_directories(self, repo_tree):
         result = discover_csvs(repo_tree)
-        assert len(result) == 2
+        assert len(result) == 3
 
     def test_returns_correct_labels(self, repo_tree):
         result = discover_csvs(repo_tree)
         labels = [label for label, _dirname, _path in result]
         assert "Ubuntu 22.04 LTS (Jammy)" in labels
         assert "Ubuntu 24.04 LTS (Noble)" in labels
+        assert "Ubuntu 26.04 LTS (Resolute)" in labels
 
     def test_returns_dirname(self, repo_tree):
         result = discover_csvs(repo_tree)
         dirnames = [dirname for _label, dirname, _path in result]
         assert "ubuntu-22-04-lts-jammy-2" in dirnames
         assert "ubuntu-24-04-lts-noble-2" in dirnames
+        assert "ubuntu-26-04-lts-resolute-2" in dirnames
 
     def test_picks_latest_csv_per_distro(self, repo_tree):
         result = discover_csvs(repo_tree)
