@@ -25,6 +25,16 @@ _KNOWN_DISTROS = {
     "bionic": "Ubuntu 18.04 LTS (Bionic)",
 }
 
+# Empty-state copy shown when a serial has no CVEs. Defined once here and shared
+# by both the server-rendered template and the client-side serial switcher. The
+# report date is omitted on purpose: each pane already shows a "Generated <date>"
+# label next to the serial dropdown.
+EMPTY_STATE_TITLE = "No known vulnerabilities"
+EMPTY_STATE_MESSAGE = (
+    "This version didn't contain any known vulnerability "
+    "at the time this report was generated."
+)
+
 _TEMPLATE = """\
 <!doctype html>
 <html lang="en">
@@ -138,6 +148,7 @@ _TEMPLATE = """\
         <script type="application/json"
                 id="serial-data-{{ loop.index }}">{{ distro.serials_json | safe }}</script>
         <div class="row vuln-cards-view" id="cards-{{ loop.index }}" data-cy="cards-view">
+          {% if distro.serials[0].rows %}
           {% for row in distro.serials[0].rows %}
           {%- set sv = row.severity | lower %}
           {%- if sv == 'critical' or sv == 'high' %}
@@ -182,6 +193,16 @@ _TEMPLATE = """\
             </div>
           </div>
           {% endfor %}
+          {% else %}
+          <div class="col-12">
+            <div class="p-notification--information" data-cy="empty-state">
+              <div class="p-notification__content">
+                <h5 class="p-notification__title">{{ empty_state_title }}</h5>
+                <p class="p-notification__message">{{ empty_state_message }}</p>
+              </div>
+            </div>
+          </div>
+          {% endif %}
         </div>
         <div class="vuln-table-view" id="table-wrap-{{ loop.index }}" data-cy="data-table">
           <table class="p-table" id="table-{{ loop.index }}">
@@ -207,6 +228,11 @@ _TEMPLATE = """\
               </tr>
             </thead>
             <tbody id="table-body-{{ loop.index }}">
+              {% if not distro.serials[0].rows %}
+              <tr><td colspan="5" class="u-align--center u-text--muted" data-cy="empty-state">
+                {{ empty_state_message }}
+              </td></tr>
+              {% endif %}
               {% for row in distro.serials[0].rows %}
               {%- set sv = row.severity | lower %}
               {%- if sv == 'critical' or sv == 'high' %}
@@ -256,6 +282,16 @@ _TEMPLATE = """\
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
+
+  var EMPTY_CARDS_HTML = '<div class="col-12">'
+    + '<div class="p-notification--information" data-cy="empty-state">'
+    + '<div class="p-notification__content">'
+    + '<h5 class="p-notification__title">' + {{ empty_state_title | tojson }} + '</h5>'
+    + '<p class="p-notification__message">' + {{ empty_state_message | tojson }} + '</p>'
+    + '</div></div></div>';
+
+  var EMPTY_TABLE_ROW_HTML = '<tr><td colspan="5" class="u-align--center u-text--muted"'
+    + ' data-cy="empty-state">' + {{ empty_state_message | tojson }} + '</td></tr>';
 
   function severityChipClass(sev) {
     var s = sev.toLowerCase();
@@ -327,7 +363,9 @@ _TEMPLATE = """\
     var sorted = state ? sortRows(rows, state.col, state.dir) : rows;
     var tbody = document.getElementById('table-body-' + paneIdx);
     if (tbody) {
-      tbody.innerHTML = sorted.map(buildTableRow).join('');
+      tbody.innerHTML = sorted.length
+        ? sorted.map(buildTableRow).join('')
+        : EMPTY_TABLE_ROW_HTML;
     }
     var tableWrap = document.getElementById('table-wrap-' + paneIdx);
     if (!tableWrap) return;
@@ -366,7 +404,9 @@ _TEMPLATE = """\
     );
     var entry = allSerials[serialName];
     var container = document.getElementById('cards-' + paneIdx);
-    container.innerHTML = entry.rows.map(buildCard).join('');
+    container.innerHTML = entry.rows.length
+      ? entry.rows.map(buildCard).join('')
+      : EMPTY_CARDS_HTML;
     var dateEl = document.getElementById('generated-date-' + paneIdx);
     if (dateEl) {
       dateEl.textContent = 'Generated ' + entry.generated_date;
@@ -542,7 +582,11 @@ def render_html(distros: list[dict]) -> str:
     """Render the dashboard HTML from the distros data structure."""
     env = Environment(autoescape=select_autoescape(["html"]))
     template = env.from_string(_TEMPLATE)
-    return template.render(distros=distros)
+    return template.render(
+        distros=distros,
+        empty_state_title=EMPTY_STATE_TITLE,
+        empty_state_message=EMPTY_STATE_MESSAGE,
+    )
 
 
 def fetch_vendor_assets(dist: Path) -> None:
