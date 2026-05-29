@@ -76,6 +76,10 @@ def repo_tree(tmp_path, sample_rows):
     noble_dir.mkdir()
     _write_csv(noble_dir / "24.04.20260313.csv", sample_rows)
 
+    resolute_dir = tmp_path / "ubuntu-26-04-lts-resolute-2"
+    resolute_dir.mkdir()
+    _write_csv(resolute_dir / "24.04.20260313.csv", sample_rows)
+
     # Non-CSV directory — should be ignored by discovery
     (tmp_path / "some-other-dir").mkdir()
 
