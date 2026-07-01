@@ -6,6 +6,7 @@ CVE-2026-6238,unknown,,20260615,noble,libc6,,https://ubuntu.com/security/CVE-202
 CVE-2026-12216,unknown,,20260615,noble,libduktape207,,https://ubuntu.com/security/CVE-2026-12216,2.7.0+tests-0ubuntu3,pending,,,pkg:deb/ubuntu/libduktape207@2.7.0+tests-0ubuntu3?distro=noble
 CVE-2026-6862,unknown,,20260615,noble,libefiboot1t64,,https://ubuntu.com/security/CVE-2026-6862,38-3.1build1,pending,,,pkg:deb/ubuntu/libefiboot1t64@38-3.1build1?distro=noble
 CVE-2026-6862,unknown,,20260615,noble,libefivar1t64,,https://ubuntu.com/security/CVE-2026-6862,38-3.1build1,pending,,,pkg:deb/ubuntu/libefivar1t64@38-3.1build1?distro=noble
+CVE-2026-13757,unknown,,20260615,noble,libp11-kit0,,https://ubuntu.com/security/CVE-2026-13757,0.25.3-4ubuntu2.1,pending,,,pkg:deb/ubuntu/libp11-kit0@0.25.3-4ubuntu2.1?distro=noble
 CVE-2026-40228,unknown,,20260615,noble,libpam-systemd,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/libpam-systemd@255.4-1ubuntu8.16?distro=noble
 CVE-2026-40228,unknown,,20260615,noble,libsystemd-shared,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/libsystemd-shared@255.4-1ubuntu8.16?distro=noble
 CVE-2026-40228,unknown,,20260615,noble,libsystemd0,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/libsystemd0@255.4-1ubuntu8.16?distro=noble

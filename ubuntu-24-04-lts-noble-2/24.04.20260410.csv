@@ -17,6 +17,7 @@ CVE-2026-6862,unknown,,20260410,noble,libefiboot1t64,,https://ubuntu.com/securit
 CVE-2026-6862,unknown,,20260410,noble,libefivar1t64,,https://ubuntu.com/security/CVE-2026-6862,38-3.1build1,pending,,,pkg:deb/ubuntu/libefivar1t64@38-3.1build1?distro=noble
 CVE-2026-5419,unknown,,20260410,noble,libgnutls30t64,,https://ubuntu.com/security/CVE-2026-5419,3.8.3-1.1ubuntu3.5,3.8.3-1.1ubuntu3.6,,,pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.5?distro=noble
 CVE-2026-34743,unknown,,20260410,noble,liblzma5,,https://ubuntu.com/security/CVE-2026-34743,5.6.1+really5.4.5-1ubuntu0.2,5.6.1+really5.4.5-1ubuntu0.3,,,pkg:deb/ubuntu/liblzma5@5.6.1+really5.4.5-1ubuntu0.2?distro=noble
+CVE-2026-13757,unknown,,20260410,noble,libp11-kit0,,https://ubuntu.com/security/CVE-2026-13757,0.25.3-4ubuntu2.1,pending,,,pkg:deb/ubuntu/libp11-kit0@0.25.3-4ubuntu2.1?distro=noble
 CVE-2026-29111,unknown,,20260410,noble,libpam-systemd,,https://ubuntu.com/security/CVE-2026-29111,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/libpam-systemd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40225,unknown,,20260410,noble,libpam-systemd,,https://ubuntu.com/security/CVE-2026-40225,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/libpam-systemd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40228,unknown,,20260410,noble,libpam-systemd,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.15,pending,,,pkg:deb/ubuntu/libpam-systemd@255.4-1ubuntu8.15?distro=noble
