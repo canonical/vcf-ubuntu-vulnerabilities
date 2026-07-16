@@ -30,6 +30,15 @@ CVE-2026-40228,unknown,,20260519,jammy,systemd-sysv,,https://ubuntu.com/security
 CVE-2026-29111,unknown,,20260519,jammy,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-29111,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/systemd-timesyncd@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40225,unknown,,20260519,jammy,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40225,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/systemd-timesyncd@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40228,unknown,,20260519,jammy,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.20,pending,,,pkg:deb/ubuntu/systemd-timesyncd@249.11-0ubuntu3.20?distro=jammy
+CVE-2026-11386,unknown,,20260519,jammy,ubuntu-advantage-tools,,https://ubuntu.com/security/CVE-2026-11386,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-advantage-tools@37.2ubuntu~22.04?distro=jammy
+CVE-2026-12391,unknown,,20260519,jammy,ubuntu-advantage-tools,,https://ubuntu.com/security/CVE-2026-12391,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-advantage-tools@37.2ubuntu~22.04?distro=jammy
+CVE-2026-9494,unknown,,20260519,jammy,ubuntu-advantage-tools,,https://ubuntu.com/security/CVE-2026-9494,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-advantage-tools@37.2ubuntu~22.04?distro=jammy
+CVE-2026-11386,unknown,,20260519,jammy,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-11386,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~22.04?distro=jammy
+CVE-2026-12391,unknown,,20260519,jammy,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-12391,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~22.04?distro=jammy
+CVE-2026-9494,unknown,,20260519,jammy,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-9494,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~22.04?distro=jammy
+CVE-2026-11386,unknown,,20260519,jammy,ubuntu-pro-client-l10n,,https://ubuntu.com/security/CVE-2026-11386,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client-l10n@37.2ubuntu~22.04?distro=jammy
+CVE-2026-12391,unknown,,20260519,jammy,ubuntu-pro-client-l10n,,https://ubuntu.com/security/CVE-2026-12391,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client-l10n@37.2ubuntu~22.04?distro=jammy
+CVE-2026-9494,unknown,,20260519,jammy,ubuntu-pro-client-l10n,,https://ubuntu.com/security/CVE-2026-9494,37.2ubuntu~22.04,37.2ubuntu~22.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client-l10n@37.2ubuntu~22.04?distro=jammy
 CVE-2026-29111,unknown,,20260519,jammy,udev,,https://ubuntu.com/security/CVE-2026-29111,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/udev@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40225,unknown,,20260519,jammy,udev,,https://ubuntu.com/security/CVE-2026-40225,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/udev@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40228,unknown,,20260519,jammy,udev,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.20,pending,,,pkg:deb/ubuntu/udev@249.11-0ubuntu3.20?distro=jammy
