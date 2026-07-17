@@ -429,4 +429,7 @@ CVE-2026-40228,unknown,,20260702,noble,systemd-dev,,https://ubuntu.com/security/
 CVE-2026-40228,unknown,,20260702,noble,systemd-resolved,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/systemd-resolved@255.4-1ubuntu8.16?distro=noble
 CVE-2026-40228,unknown,,20260702,noble,systemd-sysv,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/systemd-sysv@255.4-1ubuntu8.16?distro=noble
 CVE-2026-40228,unknown,,20260702,noble,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/systemd-timesyncd@255.4-1ubuntu8.16?distro=noble
+CVE-2026-11386,unknown,,20260702,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-11386,37.2ubuntu~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~24.04?distro=noble
+CVE-2026-12391,unknown,,20260702,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-12391,37.2ubuntu~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~24.04?distro=noble
+CVE-2026-9494,unknown,,20260702,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-9494,37.2ubuntu~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu~24.04?distro=noble
 CVE-2026-40228,unknown,,20260702,noble,udev,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.16,pending,,,pkg:deb/ubuntu/udev@255.4-1ubuntu8.16?distro=noble

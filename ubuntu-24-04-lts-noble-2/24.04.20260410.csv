@@ -460,6 +460,9 @@ CVE-2026-40228,unknown,,20260410,noble,systemd-sysv,,https://ubuntu.com/security
 CVE-2026-29111,unknown,,20260410,noble,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-29111,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/systemd-timesyncd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40225,unknown,,20260410,noble,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40225,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/systemd-timesyncd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40228,unknown,,20260410,noble,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.15,pending,,,pkg:deb/ubuntu/systemd-timesyncd@255.4-1ubuntu8.15?distro=noble
+CVE-2026-11386,unknown,,20260410,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-11386,37.1ubuntu0~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.1ubuntu0~24.04?distro=noble
+CVE-2026-12391,unknown,,20260410,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-12391,37.1ubuntu0~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.1ubuntu0~24.04?distro=noble
+CVE-2026-9494,unknown,,20260410,noble,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-9494,37.1ubuntu0~24.04,37.2ubuntu~24.04.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.1ubuntu0~24.04?distro=noble
 CVE-2026-29111,unknown,,20260410,noble,udev,,https://ubuntu.com/security/CVE-2026-29111,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/udev@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40225,unknown,,20260410,noble,udev,,https://ubuntu.com/security/CVE-2026-40225,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/udev@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40228,unknown,,20260410,noble,udev,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.15,pending,,,pkg:deb/ubuntu/udev@255.4-1ubuntu8.15?distro=noble
