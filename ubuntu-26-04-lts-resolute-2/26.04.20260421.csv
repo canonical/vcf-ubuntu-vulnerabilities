@@ -283,6 +283,9 @@ CVE-2026-3888,unknown,,20260421,resolute,snapd,,https://ubuntu.com/security/CVE-
 CVE-2026-40228,unknown,,20260421,resolute,systemd,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd@259.5-0ubuntu3?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,systemd-resolved,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd-resolved@259.5-0ubuntu3?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,systemd-sysv,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd-sysv@259.5-0ubuntu3?distro=resolute
+CVE-2026-11386,unknown,,20260421,resolute,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-11386,37.2ubuntu,37.2ubuntu0.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu?distro=resolute
+CVE-2026-12391,unknown,,20260421,resolute,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-12391,37.2ubuntu,37.2ubuntu0.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu?distro=resolute
+CVE-2026-9494,unknown,,20260421,resolute,ubuntu-pro-client,,https://ubuntu.com/security/CVE-2026-9494,37.2ubuntu,37.2ubuntu0.1,,,pkg:deb/ubuntu/ubuntu-pro-client@37.2ubuntu?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,udev,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/udev@259.5-0ubuntu3?distro=resolute
 CVE-2026-26269,unknown,,20260421,resolute,xxd,,https://ubuntu.com/security/CVE-2026-26269,2:9.1.2141-1ubuntu4,2:9.1.2141-1ubuntu4.3,,,pkg:deb/ubuntu/xxd@2:9.1.2141-1ubuntu4?distro=resolute
 CVE-2026-28417,unknown,,20260421,resolute,xxd,,https://ubuntu.com/security/CVE-2026-28417,2:9.1.2141-1ubuntu4,2:9.1.2141-1ubuntu4.3,,,pkg:deb/ubuntu/xxd@2:9.1.2141-1ubuntu4?distro=resolute
