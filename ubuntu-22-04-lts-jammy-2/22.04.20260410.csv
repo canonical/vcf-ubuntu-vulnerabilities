@@ -328,7 +328,9 @@ CVE-2026-53270,high,,20260410,jammy,linux-modules-extra-6.8.0-107-generic,,https
 CVE-2026-53275,high,,20260410,jammy,linux-modules-extra-6.8.0-107-generic,,https://ubuntu.com/security/CVE-2026-53275,6.8.0-107.107~22.04.1,pending,,,pkg:deb/ubuntu/linux-modules-extra-6.8.0-107-generic@6.8.0-107.107~22.04.1?distro=jammy
 CVE-2026-45447,high,,20260410,jammy,openssl,,https://ubuntu.com/security/CVE-2026-45447,3.0.2-0ubuntu1.23,3.0.2-0ubuntu1.25,,,pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.23?distro=jammy
 CVE-2026-5958,unknown,,20260410,jammy,sed,,https://ubuntu.com/security/CVE-2026-5958,4.8-1ubuntu2,4.8-1ubuntu2.1,,,pkg:deb/ubuntu/sed@4.8-1ubuntu2?distro=jammy
+CVE-2026-15226,high,,20260410,jammy,snapd,,https://ubuntu.com/security/CVE-2026-15226,2.73+ubuntu22.04.1,pending,,,pkg:deb/ubuntu/snapd@2.73+ubuntu22.04.1?distro=jammy
 CVE-2026-3888,unknown,,20260410,jammy,snapd,,https://ubuntu.com/security/CVE-2026-3888,2.73+ubuntu22.04.1,2.75.2+ubuntu22.04,,,pkg:deb/ubuntu/snapd@2.73+ubuntu22.04.1?distro=jammy
+CVE-2026-8933,high,,20260410,jammy,snapd,,https://ubuntu.com/security/CVE-2026-8933,2.73+ubuntu22.04.1,pending,,,pkg:deb/ubuntu/snapd@2.73+ubuntu22.04.1?distro=jammy
 CVE-2026-29111,unknown,,20260410,jammy,systemd,,https://ubuntu.com/security/CVE-2026-29111,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/systemd@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40225,unknown,,20260410,jammy,systemd,,https://ubuntu.com/security/CVE-2026-40225,249.11-0ubuntu3.20,249.11-0ubuntu3.21,,,pkg:deb/ubuntu/systemd@249.11-0ubuntu3.20?distro=jammy
 CVE-2026-40228,unknown,,20260410,jammy,systemd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.20,pending,,,pkg:deb/ubuntu/systemd@249.11-0ubuntu3.20?distro=jammy
