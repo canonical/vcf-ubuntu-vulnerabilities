@@ -279,7 +279,9 @@ CVE-2026-47333,high,,20260421,resolute,linux-tools-common,,https://ubuntu.com/se
 CVE-2026-45447,high,,20260421,resolute,openssl,,https://ubuntu.com/security/CVE-2026-45447,3.5.5-1ubuntu3,3.5.5-1ubuntu3.2,,,pkg:deb/ubuntu/openssl@3.5.5-1ubuntu3?distro=resolute
 CVE-2026-45447,high,,20260421,resolute,openssl-provider-legacy,,https://ubuntu.com/security/CVE-2026-45447,3.5.5-1ubuntu3,3.5.5-1ubuntu3.2,,,pkg:deb/ubuntu/openssl-provider-legacy@3.5.5-1ubuntu3?distro=resolute
 CVE-2026-5958,unknown,,20260421,resolute,sed,,https://ubuntu.com/security/CVE-2026-5958,4.9-2build3,4.9-2ubuntu1,,,pkg:deb/ubuntu/sed@4.9-2build3?distro=resolute
+CVE-2026-15226,high,,20260421,resolute,snapd,,https://ubuntu.com/security/CVE-2026-15226,2.74.1+ubuntu26.04.4,pending,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu26.04.4?distro=resolute
 CVE-2026-3888,unknown,,20260421,resolute,snapd,,https://ubuntu.com/security/CVE-2026-3888,2.74.1+ubuntu26.04.4,2.75.2+ubuntu26.04.2,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu26.04.4?distro=resolute
+CVE-2026-8933,high,,20260421,resolute,snapd,,https://ubuntu.com/security/CVE-2026-8933,2.74.1+ubuntu26.04.4,pending,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu26.04.4?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,systemd,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd@259.5-0ubuntu3?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,systemd-resolved,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd-resolved@259.5-0ubuntu3?distro=resolute
 CVE-2026-40228,unknown,,20260421,resolute,systemd-sysv,,https://ubuntu.com/security/CVE-2026-40228,259.5-0ubuntu3,pending,,,pkg:deb/ubuntu/systemd-sysv@259.5-0ubuntu3?distro=resolute
