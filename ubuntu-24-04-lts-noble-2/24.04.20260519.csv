@@ -76,7 +76,9 @@ CVE-2026-23112,high,,20260519,noble,linux-tools-common,,https://ubuntu.com/secur
 CVE-2026-23231,high,,20260519,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2026-23231,6.8.0-117.117,pending,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-117.117?distro=noble
 CVE-2026-23273,unknown,,20260519,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2026-23273,6.8.0-117.117,pending,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-117.117?distro=noble
 CVE-2026-45447,high,,20260519,noble,openssl,,https://ubuntu.com/security/CVE-2026-45447,3.0.13-0ubuntu3.9,3.0.13-0ubuntu3.11,,,pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.9?distro=noble
+CVE-2026-15226,unknown,,20260519,noble,snapd,,https://ubuntu.com/security/CVE-2026-15226,2.74.1+ubuntu24.04.4,2.76+ubuntu24.04.1,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu24.04.4?distro=noble
 CVE-2026-3888,unknown,,20260519,noble,snapd,,https://ubuntu.com/security/CVE-2026-3888,2.74.1+ubuntu24.04.4,2.75.2+ubuntu24.04,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu24.04.4?distro=noble
+CVE-2026-8933,unknown,,20260519,noble,snapd,,https://ubuntu.com/security/CVE-2026-8933,2.74.1+ubuntu24.04.4,2.76+ubuntu24.04.1,,,pkg:deb/ubuntu/snapd@2.74.1+ubuntu24.04.4?distro=noble
 CVE-2026-29111,unknown,,20260519,noble,systemd,,https://ubuntu.com/security/CVE-2026-29111,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/systemd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40225,unknown,,20260519,noble,systemd,,https://ubuntu.com/security/CVE-2026-40225,255.4-1ubuntu8.15,255.4-1ubuntu8.16,,,pkg:deb/ubuntu/systemd@255.4-1ubuntu8.15?distro=noble
 CVE-2026-40228,unknown,,20260519,noble,systemd,,https://ubuntu.com/security/CVE-2026-40228,255.4-1ubuntu8.15,pending,,,pkg:deb/ubuntu/systemd@255.4-1ubuntu8.15?distro=noble
