@@ -6,7 +6,7 @@
     "cy:open": "start-server-and-test 'serve dist -l 8080' http://localhost:8080 'cypress run --headed --no-exit --browser chromium'"
   },
   "devDependencies": {
-    "cypress": "^13.17.0",
+    "cypress": "^15.15.0",
     "serve": "^14.2.4",
     "start-server-and-test": "^2.0.10"
   }
