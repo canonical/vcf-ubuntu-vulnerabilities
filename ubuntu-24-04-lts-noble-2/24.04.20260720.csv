@@ -1,8 +1,10 @@
 CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
+CVE-2026-19617,unknown,,20260720,noble,dmsetup,,https://ubuntu.com/security/CVE-2026-19617,2:1.02.185-3ubuntu3.2,pending,,,pkg:deb/ubuntu/dmsetup@2:1.02.185-3ubuntu3.2?distro=noble
 CVE-2026-5435,unknown,,20260720,noble,libc-bin,,https://ubuntu.com/security/CVE-2026-5435,2.39-0ubuntu8.7,pending,,,pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.7?distro=noble
 CVE-2026-6238,unknown,,20260720,noble,libc-bin,,https://ubuntu.com/security/CVE-2026-6238,2.39-0ubuntu8.7,pending,,,pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.7?distro=noble
 CVE-2026-5435,unknown,,20260720,noble,libc6,,https://ubuntu.com/security/CVE-2026-5435,2.39-0ubuntu8.7,pending,,,pkg:deb/ubuntu/libc6@2.39-0ubuntu8.7?distro=noble
 CVE-2026-6238,unknown,,20260720,noble,libc6,,https://ubuntu.com/security/CVE-2026-6238,2.39-0ubuntu8.7,pending,,,pkg:deb/ubuntu/libc6@2.39-0ubuntu8.7?distro=noble
+CVE-2026-19617,unknown,,20260720,noble,libdevmapper1.02.1,,https://ubuntu.com/security/CVE-2026-19617,2:1.02.185-3ubuntu3.2,pending,,,pkg:deb/ubuntu/libdevmapper1.02.1@2:1.02.185-3ubuntu3.2?distro=noble
 CVE-2026-12216,unknown,,20260720,noble,libduktape207,,https://ubuntu.com/security/CVE-2026-12216,2.7.0+tests-0ubuntu3,pending,,,pkg:deb/ubuntu/libduktape207@2.7.0+tests-0ubuntu3?distro=noble
 CVE-2026-6862,unknown,,20260720,noble,libefiboot1t64,,https://ubuntu.com/security/CVE-2026-6862,38-3.1build1,pending,,,pkg:deb/ubuntu/libefiboot1t64@38-3.1build1?distro=noble
 CVE-2026-6862,unknown,,20260720,noble,libefivar1t64,,https://ubuntu.com/security/CVE-2026-6862,38-3.1build1,pending,,,pkg:deb/ubuntu/libefivar1t64@38-3.1build1?distro=noble
