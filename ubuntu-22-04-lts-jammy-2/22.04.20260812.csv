@@ -1,0 +1,18 @@
+CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
+CVE-2026-5435,unknown,,20260812,jammy,libc-bin,,https://ubuntu.com/security/CVE-2026-5435,2.35-0ubuntu3.14,pending,,,pkg:deb/ubuntu/libc-bin@2.35-0ubuntu3.14?distro=jammy
+CVE-2026-6238,unknown,,20260812,jammy,libc-bin,,https://ubuntu.com/security/CVE-2026-6238,2.35-0ubuntu3.14,pending,,,pkg:deb/ubuntu/libc-bin@2.35-0ubuntu3.14?distro=jammy
+CVE-2026-5435,unknown,,20260812,jammy,libc6,,https://ubuntu.com/security/CVE-2026-5435,2.35-0ubuntu3.14,pending,,,pkg:deb/ubuntu/libc6@2.35-0ubuntu3.14?distro=jammy
+CVE-2026-6238,unknown,,20260812,jammy,libc6,,https://ubuntu.com/security/CVE-2026-6238,2.35-0ubuntu3.14,pending,,,pkg:deb/ubuntu/libc6@2.35-0ubuntu3.14?distro=jammy
+CVE-2026-6862,unknown,,20260812,jammy,libefiboot1,,https://ubuntu.com/security/CVE-2026-6862,37-6ubuntu2,pending,,,pkg:deb/ubuntu/libefiboot1@37-6ubuntu2?distro=jammy
+CVE-2026-6862,unknown,,20260812,jammy,libefivar1,,https://ubuntu.com/security/CVE-2026-6862,37-6ubuntu2,pending,,,pkg:deb/ubuntu/libefivar1@37-6ubuntu2?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,libnss-systemd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/libnss-systemd@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,libpam-systemd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/libpam-systemd@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,libsystemd0,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/libsystemd0@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,libudev1,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/libudev1@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-15226,high,,20260812,jammy,snapd,,https://ubuntu.com/security/CVE-2026-15226,2.76+ubuntu22.04.1,pending,,,pkg:deb/ubuntu/snapd@2.76+ubuntu22.04.1?distro=jammy
+CVE-2026-8933,high,,20260812,jammy,snapd,,https://ubuntu.com/security/CVE-2026-8933,2.76+ubuntu22.04.1,pending,,,pkg:deb/ubuntu/snapd@2.76+ubuntu22.04.1?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,systemd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/systemd@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,systemd-sysv,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/systemd-sysv@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,systemd-timesyncd,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/systemd-timesyncd@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-40228,unknown,,20260812,jammy,udev,,https://ubuntu.com/security/CVE-2026-40228,249.11-0ubuntu3.22,pending,,,pkg:deb/ubuntu/udev@249.11-0ubuntu3.22?distro=jammy
+CVE-2026-35177,unknown,,20260812,jammy,xxd,,https://ubuntu.com/security/CVE-2026-35177,2:8.2.3995-1ubuntu2.34,pending,,,pkg:deb/ubuntu/xxd@2:8.2.3995-1ubuntu2.34?distro=jammy
