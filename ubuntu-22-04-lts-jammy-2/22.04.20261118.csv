@@ -1,4 +1,6 @@
 CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
+CVE-2022-25235,high,,20261118,jammy,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.4.7-1ubuntu0.9,2.4.7-1ubuntu0.10,,,pkg:deb/ubuntu/libexpat1@2.4.7-1ubuntu0.9?distro=jammy
+CVE-2022-25236,high,,20261118,jammy,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.4.7-1ubuntu0.9,2.4.7-1ubuntu0.10,,,pkg:deb/ubuntu/libexpat1@2.4.7-1ubuntu0.9?distro=jammy
 CVE-2022-50240,high,,20261118,jammy,linux-headers-6.8.0-149-generic,,https://ubuntu.com/security/CVE-2022-50240,6.8.0-149.149~22.04.1,pending,,,pkg:deb/ubuntu/linux-headers-6.8.0-149-generic@6.8.0-149.149~22.04.1?distro=jammy
 CVE-2023-52887,high,,20261118,jammy,linux-headers-6.8.0-149-generic,,https://ubuntu.com/security/CVE-2023-52887,6.8.0-149.149~22.04.1,6.8.0-149.149~22.04.2,,,pkg:deb/ubuntu/linux-headers-6.8.0-149-generic@6.8.0-149.149~22.04.1?distro=jammy
 CVE-2024-23848,high,,20261118,jammy,linux-headers-6.8.0-149-generic,,https://ubuntu.com/security/CVE-2024-23848,6.8.0-149.149~22.04.1,6.8.0-149.149~22.04.2,,,pkg:deb/ubuntu/linux-headers-6.8.0-149-generic@6.8.0-149.149~22.04.1?distro=jammy
