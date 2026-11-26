@@ -1209,8 +1209,8 @@ CVE-2026-99800,high,,20260702,resolute,bpftool,,https://ubuntu.com/security/CVE-
 CVE-2026-99804,high,,20260702,resolute,bpftool,,https://ubuntu.com/security/CVE-2026-99804,7.7.0+7.0.0-27.27,pending,,,pkg:deb/ubuntu/bpftool@7.7.0+7.0.0-27.27?distro=resolute
 CVE-2026-99999,high,,20260702,resolute,bpftool,,https://ubuntu.com/security/CVE-2026-99999,7.7.0+7.0.0-27.27,7.7.0+7.0.0-44.44,,,pkg:deb/ubuntu/bpftool@7.7.0+7.0.0-27.27?distro=resolute
 CVE-2026-111497,high,,20260702,resolute,libbrotli1,,https://ubuntu.com/security/CVE-2026-111497,1.2.0-3build1,1.2.0-3ubuntu0.1,,,pkg:deb/ubuntu/libbrotli1@1.2.0-3build1?distro=resolute
-CVE-2022-25235,high,,20260702,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.7.4-1,2.7.4-1ubuntu0.2,,,pkg:deb/ubuntu/libexpat1@2.7.4-1?distro=resolute
-CVE-2022-25236,high,,20260702,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.7.4-1,2.7.4-1ubuntu0.2,,,pkg:deb/ubuntu/libexpat1@2.7.4-1?distro=resolute
+CVE-2022-25235,high,,20260702,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.7.4-1,2.7.4-1ubuntu0.3,,,pkg:deb/ubuntu/libexpat1@2.7.4-1?distro=resolute
+CVE-2022-25236,high,,20260702,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.7.4-1,2.7.4-1ubuntu0.3,,,pkg:deb/ubuntu/libexpat1@2.7.4-1?distro=resolute
 CVE-2021-3449,high,,20260702,resolute,libssl3t64,,https://ubuntu.com/security/CVE-2021-3449,3.5.5-1ubuntu3.2,3.5.5-1ubuntu3.7,,,pkg:deb/ubuntu/libssl3t64@3.5.5-1ubuntu3.2?distro=resolute
 CVE-2021-3711,high,,20260702,resolute,libssl3t64,,https://ubuntu.com/security/CVE-2021-3711,3.5.5-1ubuntu3.2,3.5.5-1ubuntu3.7,,,pkg:deb/ubuntu/libssl3t64@3.5.5-1ubuntu3.2?distro=resolute
 CVE-2022-0778,high,,20260702,resolute,libssl3t64,,https://ubuntu.com/security/CVE-2022-0778,3.5.5-1ubuntu3.2,3.5.5-1ubuntu3.7,,,pkg:deb/ubuntu/libssl3t64@3.5.5-1ubuntu3.2?distro=resolute

@@ -1208,6 +1208,8 @@ CVE-2026-99798,high,,20261118,resolute,bpftool,,https://ubuntu.com/security/CVE-
 CVE-2026-99800,high,,20261118,resolute,bpftool,,https://ubuntu.com/security/CVE-2026-99800,7.7.0+7.0.0-43.43,pending,,,pkg:deb/ubuntu/bpftool@7.7.0+7.0.0-43.43?distro=resolute
 CVE-2026-99804,high,,20261118,resolute,bpftool,,https://ubuntu.com/security/CVE-2026-99804,7.7.0+7.0.0-43.43,pending,,,pkg:deb/ubuntu/bpftool@7.7.0+7.0.0-43.43?distro=resolute
 CVE-2026-99999,high,,20261118,resolute,bpftool,,https://ubuntu.com/security/CVE-2026-99999,7.7.0+7.0.0-43.43,7.7.0+7.0.0-44.44,,,pkg:deb/ubuntu/bpftool@7.7.0+7.0.0-43.43?distro=resolute
+CVE-2022-25235,high,,20261118,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.7.4-1ubuntu0.2,2.7.4-1ubuntu0.3,,,pkg:deb/ubuntu/libexpat1@2.7.4-1ubuntu0.2?distro=resolute
+CVE-2022-25236,high,,20261118,resolute,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.7.4-1ubuntu0.2,2.7.4-1ubuntu0.3,,,pkg:deb/ubuntu/libexpat1@2.7.4-1ubuntu0.2?distro=resolute
 CVE-2022-50240,high,,20261118,resolute,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2022-50240,7.0.0-43.43,pending,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43?distro=resolute
 CVE-2025-10263,high,,20261118,resolute,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2025-10263,7.0.0-43.43,7.0.0-43.43.1,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43?distro=resolute
 CVE-2025-40190,high,,20261118,resolute,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2025-40190,7.0.0-43.43,pending,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43?distro=resolute
