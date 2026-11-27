@@ -1,5 +1,7 @@
 CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
 CVE-2026-111497,high,,20261008,noble,libbrotli1,,https://ubuntu.com/security/CVE-2026-111497,1.1.0-2build2,1.1.0-2ubuntu0.1,,,pkg:deb/ubuntu/libbrotli1@1.1.0-2build2?distro=noble
+CVE-2022-25235,high,,20261008,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.6,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.6?distro=noble
+CVE-2022-25236,high,,20261008,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.6,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.6?distro=noble
 CVE-2020-12351,high,,20261008,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2020-12351,6.8.0-146.146,6.8.0-151.151,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-146.146?distro=noble
 CVE-2022-50240,high,,20261008,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2022-50240,6.8.0-146.146,pending,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-146.146?distro=noble
 CVE-2023-52699,high,,20261008,noble,linux-tools-common,,https://ubuntu.com/security/CVE-2023-52699,6.8.0-146.146,6.8.0-151.151,,,pkg:deb/ubuntu/linux-tools-common@6.8.0-146.146?distro=noble

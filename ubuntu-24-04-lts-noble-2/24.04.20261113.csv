@@ -1,4 +1,6 @@
 CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
+CVE-2022-25235,high,,20261113,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.6,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.6?distro=noble
+CVE-2022-25236,high,,20261113,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.6,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.6?distro=noble
 CVE-2014-4323,high,,20261113,noble,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2014-4323,7.0.0-43.43~24.04.1,pending,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43~24.04.1?distro=noble
 CVE-2022-50240,high,,20261113,noble,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2022-50240,7.0.0-43.43~24.04.1,pending,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43~24.04.1?distro=noble
 CVE-2025-10263,high,,20261113,noble,linux-headers-7.0.0-43-generic,,https://ubuntu.com/security/CVE-2025-10263,7.0.0-43.43~24.04.1,7.0.0-43.43.1~24.04.2,,,pkg:deb/ubuntu/linux-headers-7.0.0-43-generic@7.0.0-43.43~24.04.1?distro=noble

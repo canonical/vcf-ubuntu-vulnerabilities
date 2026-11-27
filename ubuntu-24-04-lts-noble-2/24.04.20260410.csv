@@ -2,8 +2,8 @@ CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Vers
 CVE-2023-20569,high,,20260410,noble,amd64-microcode,,https://ubuntu.com/security/CVE-2023-20569,3.20250311.1ubuntu0.24.04.1,3.20251202.1ubuntu0.24.04.1,,,pkg:deb/ubuntu/amd64-microcode@3.20250311.1ubuntu0.24.04.1?distro=noble
 CVE-2023-20593,high,,20260410,noble,amd64-microcode,,https://ubuntu.com/security/CVE-2023-20593,3.20250311.1ubuntu0.24.04.1,3.20251202.1ubuntu0.24.04.1,,,pkg:deb/ubuntu/amd64-microcode@3.20250311.1ubuntu0.24.04.1?distro=noble
 CVE-2026-111497,high,,20260410,noble,libbrotli1,,https://ubuntu.com/security/CVE-2026-111497,1.1.0-2build2,1.1.0-2ubuntu0.1,,,pkg:deb/ubuntu/libbrotli1@1.1.0-2build2?distro=noble
-CVE-2022-25235,high,,20260410,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.6,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
-CVE-2022-25236,high,,20260410,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.6,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
+CVE-2022-25235,high,,20260410,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
+CVE-2022-25236,high,,20260410,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
 CVE-2021-3449,high,,20260410,noble,libssl3t64,,https://ubuntu.com/security/CVE-2021-3449,3.0.13-0ubuntu3.9,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.9?distro=noble
 CVE-2021-3711,high,,20260410,noble,libssl3t64,,https://ubuntu.com/security/CVE-2021-3711,3.0.13-0ubuntu3.9,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.9?distro=noble
 CVE-2022-0778,high,,20260410,noble,libssl3t64,,https://ubuntu.com/security/CVE-2022-0778,3.0.13-0ubuntu3.9,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.9?distro=noble

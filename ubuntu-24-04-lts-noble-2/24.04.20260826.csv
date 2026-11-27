@@ -1,7 +1,7 @@
 CVE ID,Severity,Score,Image+Version,Distro,Package Name,Title,URL,Installed Version,Fixed Version,Description,Published Date,PURL
 CVE-2026-111497,high,,20260826,noble,libbrotli1,,https://ubuntu.com/security/CVE-2026-111497,1.1.0-2build2,1.1.0-2ubuntu0.1,,,pkg:deb/ubuntu/libbrotli1@1.1.0-2build2?distro=noble
-CVE-2022-25235,high,,20260826,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.6,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
-CVE-2022-25236,high,,20260826,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.6,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
+CVE-2022-25235,high,,20260826,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25235,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
+CVE-2022-25236,high,,20260826,noble,libexpat1,,https://ubuntu.com/security/CVE-2022-25236,2.6.1-2ubuntu0.4,2.6.1-2ubuntu0.7,,,pkg:deb/ubuntu/libexpat1@2.6.1-2ubuntu0.4?distro=noble
 CVE-2021-3449,high,,20260826,noble,libssl3t64,,https://ubuntu.com/security/CVE-2021-3449,3.0.13-0ubuntu3.15,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.15?distro=noble
 CVE-2021-3711,high,,20260826,noble,libssl3t64,,https://ubuntu.com/security/CVE-2021-3711,3.0.13-0ubuntu3.15,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.15?distro=noble
 CVE-2022-0778,high,,20260826,noble,libssl3t64,,https://ubuntu.com/security/CVE-2022-0778,3.0.13-0ubuntu3.15,3.0.13-0ubuntu3.16,,,pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.15?distro=noble
